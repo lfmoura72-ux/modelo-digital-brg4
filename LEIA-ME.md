@@ -1,14 +1,20 @@
-<!-- dg-dev: atualizado=2026-11-02 -->
+<!-- dg-dev: atualizado=2026-11-03 -->
 
-# Gêmeo digital do BRG4 — página de demonstração
+# Modelo digital do BRG4 — página de demonstração
 
 Uma página que a banca do TFM abre pelo celular (link ou QR code) para ver como
-funcionaria o gêmeo digital da rodovia BRG4: mapa com foto aérea, o modelo 3D do
+funcionaria o modelo digital da rodovia BRG4: mapa com foto aérea, o modelo 3D do
 IFC, a ficha de cada ativo, o histórico de inspeção e um sensor.
 
-**Endereço público:** <https://lfmoura72-ux.github.io/gemeo-digital-brg4/> (GitHub Pages do
-repositório público `lfmoura72-ux/gemeo-digital-brg4`, no ar desde 02/11/2026, com a aprovação do
+**Por que "modelo digital" e não "gêmeo digital".** Mudado em 03/11/2026, a pedido do dono:
+um gêmeo é a cópia de uma obra que existe e manda dados de verdade, e o BRG4 é uma obra fictícia.
+Os nomes internos (`gemeo_ficticio.json`, a pasta local) ficaram como estavam, porque a banca não
+os vê e trocá-los mexeria em 20 lugares do código (contados em 03/11/2026) sem mudar nada na página.
+
+**Endereço público:** <https://lfmoura72-ux.github.io/modelo-digital-brg4/> (GitHub Pages do
+repositório público `lfmoura72-ux/modelo-digital-brg4`, no ar desde 02/11/2026, com a aprovação do
 grupo e da Zigurat para os dados do BRG4 ficarem públicos). O botão "Compartilhar" mostra o QR code.
+Até 03/11/2026 o endereço era `.../gemeo-digital-brg4/`, que deixou de abrir com a troca de nome.
 
 **O que é real e o que é fictício.** Real: a geometria (os IFC do grupo), os 55
 ativos, os IDs, a classificação Uniclass e as tarefas de manutenção (COBie e

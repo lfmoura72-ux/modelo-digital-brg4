@@ -355,7 +355,7 @@ patologia["foto_ilustrativa"] = {
 inspecoes[2]["foto_ilustrativa"] = patologia["foto_ilustrativa"]["arquivo"]
 
 with open(os.path.join(pasta, "gemeo_ficticio.json"), "w", encoding="utf-8") as arq:
-    json.dump({"aviso": "Dados FICTÍCIOS, só para demonstrar o gêmeo digital do BRG4.",
+    json.dump({"aviso": "Dados FICTÍCIOS, só para demonstrar o modelo digital do BRG4.",
                "data_simulada": DATA_SIMULADA.isoformat(), "inspecoes": inspecoes,
                "proximas_inspecoes": proximas,
                "patologia": patologia, "sensor": sensor,

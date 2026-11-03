@@ -1,4 +1,4 @@
--- Cadastro de inspeção pelo link do gêmeo digital do BRG4.
+-- Cadastro de inspeção pelo link do modelo digital do BRG4.
 --
 -- Como usar: no Supabase, SQL Editor → New query, colar este arquivo inteiro e apertar Run.
 -- Pode rodar de novo sem medo: nada aqui apaga linha nem foto; o que já existe fica como está.

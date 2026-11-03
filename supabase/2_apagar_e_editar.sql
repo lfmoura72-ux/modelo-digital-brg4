@@ -1,4 +1,4 @@
--- Apagar e editar pelo link do gêmeo digital do BRG4, sem login.
+-- Apagar e editar pelo link do modelo digital do BRG4, sem login.
 --
 -- Como usar: no Supabase, SQL Editor → New query, colar este arquivo inteiro e apertar Run. Depois,
 -- uma vez só, o 3_palavra_do_dono.sql, com a palavra-código digitada no próprio SQL Editor.
