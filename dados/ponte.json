@@ -1,0 +1,285 @@
+{
+ "fonte": "Ponte Rodoviaria Parametrizada V3.ifc",
+ "esquema": "IFC4X3",
+ "autoria": "modelo paramétrico de terceiros (Revit), o mesmo da entrega do grupo; crédito no BEP",
+ "estaca_m": [
+  536.132,
+  641.129
+ ],
+ "comprimento_tabuleiro_m": 105.0,
+ "comprimento_total_m": 113.94,
+ "largura_m": 12.82,
+ "vaos_m": [
+  34.8,
+  34.8,
+  34.8
+ ],
+ "vigas_por_vao": 5,
+ "azimute_graus": 119.7,
+ "cota_tabuleiro_m": 581.3,
+ "cota_fundo_vigas_m": 579.11,
+ "cota_fundo_vale_m": 571.01,
+ "altura_livre_m": 8.11,
+ "cota_ponta_estacas_m": 551.36,
+ "total_pecas": 1254,
+ "classes_ifc": {
+  "IfcSlab": 1090,
+  "IfcBuildingElementProxy": 78,
+  "IfcBeam": 63,
+  "IfcPile": 14,
+  "IfcCovering": 5,
+  "IfcFooting": 4
+ },
+ "tipos": [
+  {
+   "parte": "Superestrutura",
+   "familia": "Pre laje",
+   "tipo": "Pre laje",
+   "classe_ifc": "IfcSlab",
+   "pecas": 1088,
+   "materiais": [
+    "DNIT - Concreto - Fck 30 Mpa - Novo"
+   ]
+  },
+  {
+   "parte": "Superestrutura",
+   "familia": "Viga Transversina - Retangular - Novo",
+   "tipo": "30 x 130 cm",
+   "classe_ifc": "IfcBeam",
+   "pecas": 36,
+   "materiais": []
+  },
+  {
+   "parte": "Superestrutura",
+   "familia": "Viga protendida",
+   "tipo": "130 x 60 cm",
+   "classe_ifc": "IfcBeam",
+   "pecas": 15,
+   "materiais": []
+  },
+  {
+   "parte": "Superestrutura",
+   "familia": "Barreira Rígida",
+   "tipo": "New Jersey - Proposta",
+   "classe_ifc": "IfcBuildingElementProxy",
+   "pecas": 6,
+   "materiais": [
+    "DNIT - Concreto - Fck 30 Mpa - Novo"
+   ]
+  },
+  {
+   "parte": "Superestrutura",
+   "familia": "Piso",
+   "tipo": "DNIT - Tabuleiro - 8 cm",
+   "classe_ifc": "IfcCovering",
+   "pecas": 4,
+   "materiais": [
+    "DNIT - Concreto - Fck 30 Mpa - Novo"
+   ]
+  },
+  {
+   "parte": "Superestrutura",
+   "familia": "LAJE DE TRANSIÇÃO RETA",
+   "tipo": "LAJE DE TRANSIÇÃO RETA",
+   "classe_ifc": "IfcSlab",
+   "pecas": 2,
+   "materiais": [
+    "DNIT - Concreto Magro"
+   ]
+  },
+  {
+   "parte": "Superestrutura",
+   "familia": "Piso",
+   "tipo": "DNIT - Tabuleiro - 15 cm",
+   "classe_ifc": "IfcCovering",
+   "pecas": 1,
+   "materiais": [
+    "DNIT - Concreto - Fck 30 Mpa - Novo"
+   ]
+  },
+  {
+   "parte": "Apoios",
+   "familia": "Aparelho Apoio - Retangular - Novo",
+   "tipo": "40 x 30 x 04.8 cm",
+   "classe_ifc": "IfcBuildingElementProxy",
+   "pecas": 30,
+   "materiais": [
+    "DNIT - Neoprene - Fretado - Novo"
+   ]
+  },
+  {
+   "parte": "Apoios",
+   "familia": "BERÇO DE GRAUTE",
+   "tipo": "50x40x5.2",
+   "classe_ifc": "IfcBuildingElementProxy",
+   "pecas": 12,
+   "materiais": [
+    "DNIT - Argamassa"
+   ]
+  },
+  {
+   "parte": "Apoios",
+   "familia": "BERÇO DE GRAUTE",
+   "tipo": "50x40x13",
+   "classe_ifc": "IfcBuildingElementProxy",
+   "pecas": 12,
+   "materiais": [
+    "DNIT - Argamassa"
+   ]
+  },
+  {
+   "parte": "Apoios",
+   "familia": "BERÇO DE GRAUTE",
+   "tipo": "50x40x20.80",
+   "classe_ifc": "IfcBuildingElementProxy",
+   "pecas": 6,
+   "materiais": [
+    "DNIT - Argamassa"
+   ]
+  },
+  {
+   "parte": "Mesoestrutura",
+   "familia": "Console Pilar - Trapezoidal - Novo",
+   "tipo": "30/20 x 30 x 12800cm - Meso",
+   "classe_ifc": "IfcBuildingElementProxy",
+   "pecas": 6,
+   "materiais": [
+    "DNIT - Concreto - Fck 30 Mpa - Novo"
+   ]
+  },
+  {
+   "parte": "Mesoestrutura",
+   "familia": "Pilar - Circular - Proposta",
+   "tipo": "D - 100 cm",
+   "classe_ifc": "IfcBeam",
+   "pecas": 4,
+   "materiais": []
+  },
+  {
+   "parte": "Mesoestrutura",
+   "familia": "Viga de Travamento - Retangular - Novo",
+   "tipo": "80 x 80 cm",
+   "classe_ifc": "IfcBeam",
+   "pecas": 2,
+   "materiais": [
+    "DNIT - Concreto - Fck 30 Mpa - Novo"
+   ]
+  },
+  {
+   "parte": "Mesoestrutura",
+   "familia": "Console Pilar - Trapezoidal - Novo",
+   "tipo": "30/20 x 30 x 11800cm - Encontro",
+   "classe_ifc": "IfcBuildingElementProxy",
+   "pecas": 2,
+   "materiais": [
+    "DNIT - Concreto - Fck 30 Mpa - Novo"
+   ]
+  },
+  {
+   "parte": "Mesoestrutura",
+   "familia": "Travessa Retangular",
+   "tipo": "160x110 cm",
+   "classe_ifc": "IfcBeam",
+   "pecas": 2,
+   "materiais": [
+    "DNIT - Concreto Magro"
+   ]
+  },
+  {
+   "parte": "Mesoestrutura",
+   "familia": "Travessa Retangular",
+   "tipo": "180x120 cm",
+   "classe_ifc": "IfcBeam",
+   "pecas": 2,
+   "materiais": []
+  },
+  {
+   "parte": "Encontros",
+   "familia": "Ala - Proposta - Trapezoidal",
+   "tipo": "Ala - Proposta",
+   "classe_ifc": "IfcBuildingElementProxy",
+   "pecas": 4,
+   "materiais": []
+  },
+  {
+   "parte": "Encontros",
+   "familia": "Muro Cortina - Retangular - Novo",
+   "tipo": "25 x 213 cm",
+   "classe_ifc": "IfcBeam",
+   "pecas": 2,
+   "materiais": []
+  },
+  {
+   "parte": "Fundação",
+   "familia": "Estaca com Camisa Metalica",
+   "tipo": "D = 100 cm",
+   "classe_ifc": "IfcPile",
+   "pecas": 8,
+   "materiais": [
+    "DNIT - Camisa Metalica",
+    "DNIT - Concreto - Fck 30 Mpa - Novo"
+   ]
+  },
+  {
+   "parte": "Fundação",
+   "familia": "Estaca sem Camisa Metalica",
+   "tipo": "D = 100 cm",
+   "classe_ifc": "IfcPile",
+   "pecas": 6,
+   "materiais": [
+    "DNIT - Concreto - Fck 30 Mpa - Novo"
+   ]
+  },
+  {
+   "parte": "Fundação",
+   "familia": "Bloco Retangular",
+   "tipo": "140x380x145cm",
+   "classe_ifc": "IfcFooting",
+   "pecas": 4,
+   "materiais": []
+  }
+ ],
+ "materiais": {
+  "DNIT - Concreto - Fck 30 Mpa - Novo": 1123,
+  "DNIT - Forma - Proposta": 69,
+  "DNIT - Argamassa": 30,
+  "DNIT - Neoprene - Fretado - Novo": 30,
+  "DNIT - Camisa Metalica": 8,
+  "DNIT - Concreto Magro": 4
+ },
+ "material_sem_definir": "DNIT - Forma - Proposta",
+ "centro_utm": [
+  697543.29,
+  7707460.288
+ ],
+ "centro_xz": [
+  -43.767,
+  -31.779
+ ],
+ "meio_vao_central_utm": [
+  697543.29,
+  7707460.288
+ ],
+ "meio_vao_central_xz": [
+  -43.767,
+  -31.779
+ ],
+ "contorno_utm": [
+  [
+   697497.822,
+   7707493.752
+  ],
+  [
+   697596.768,
+   7707437.261
+  ],
+  [
+   697590.315,
+   7707425.958
+  ],
+  [
+   697491.368,
+   7707482.448
+  ]
+ ]
+}

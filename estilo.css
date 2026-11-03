@@ -1,0 +1,942 @@
+/* Gêmeo digital BRG4. Tema escuro na página toda (escolhido pelo dono em 02/11/2026, esboço "Sala de
+   operação"): fundo #0F1923, barras #0B131B, fios de 1px, sem sombras pesadas e sem cartões. */
+:root {
+  --fundo: #0F1923;
+  --barra: #0B131B;
+  --superficie: #15222E;
+  --fio: #1F2C38;
+  --borda: #2D3E4E;
+  --texto: #E4EAF0;
+  --texto2: #B5C1CC;
+  --mudo: #8D9BA8;
+  --azul: #5AB0F0;
+  --link: #6FBBF5;
+  --t-azul: #1A2B3B;
+  --t-verde: #16301E;
+  --verde: #4CA355;
+  --ambar: #E0A100;
+  --vermelho: #C62828;
+  --laranja: #E06A1B;
+  /* Cor de fundo dos rótulos por grupo, no 3D e nos títulos da lista de sensores. O azul do grupo
+     da ponte, no esboço, se confundia com a água do rio; o violeta não aparece em nada da foto. */
+  --grupo-ponte: #604096;
+  --grupo-talude: #805816;
+  --grupo-atencao: #962028;
+  --abas-h: 60px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--fundo);
+  color: var(--texto);
+  font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
+button { font: inherit; color: inherit; }
+code { font-size: 0.92em; word-break: break-all; }
+a { color: var(--link); }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--azul); outline-offset: 2px; }
+
+/* ---------- cabeçalho e faixa ---------- */
+.topo {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 16px;
+  background: var(--barra);
+  border-bottom: 1px solid var(--fio);
+}
+.topo h1 { font-size: 17px; line-height: 1.2; color: var(--texto); }
+.topo p { margin-top: 2px; font-size: 12.5px; color: var(--mudo); line-height: 1.3; }
+.faixa-demo {
+  flex: none;
+  padding: 6px 16px;
+  background: #2A2410;
+  border-bottom: 1px solid #3A3214;
+  color: #E9D9A0;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+/* ---------- botões ---------- */
+.btn {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid #3A5A75;
+  border-radius: 10px;
+  background: transparent;
+  color: #8CCBFA;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover { background: var(--t-azul); }
+.btn-primario { background: var(--azul); border-color: var(--azul); color: #0B131B; }
+.btn-primario:hover { background: #7CC2F7; }
+.btn-fechar {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--mudo);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+.btn-fechar:hover { background: var(--t-azul); color: var(--texto); }
+
+/* ---------- abas ---------- */
+.abas { flex: none; display: flex; background: var(--barra); border-bottom: 1px solid var(--fio); padding: 0 8px; }
+.aba {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--mudo);
+  font-weight: 600;
+  cursor: pointer;
+}
+.aba svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
+.aba[aria-selected="true"] { color: #8CCBFA; border-bottom-color: var(--azul); }
+
+/* ---------- palco ---------- */
+.palco { flex: 1; min-height: 0; display: flex; position: relative; }
+.vistas { flex: 1; min-width: 0; position: relative; }
+.vista { position: absolute; inset: 0; }
+.vista-painel { overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: var(--borda) transparent; }
+.vista-mapa, .vista-3d { overflow: hidden; }
+#mapa, .cena { position: absolute; inset: 0; }
+#mapa { background: #1B2A38; }
+/* O renderer do 3D é transparente: o céu é este degradê. */
+.cena { background: linear-gradient(180deg, #1B2A38 0%, #101A24 100%); }
+.cena canvas { display: block; }
+/* isolation: o z-index que o CSS2DRenderer escreve em cada âncora fica preso aqui dentro, abaixo da barra. */
+.cena-rotulos { position: absolute; inset: 0; overflow: hidden; pointer-events: none; isolation: isolate; }
+/* O rótulo do que a banca acabou de gravar vence os fictícios: o primeiro envio, tocado na ponte,
+   ficou atrás do JUN-01 no celular (02/11/2026). O !important vence o z-index inline do CSS2DRenderer. */
+.ancora-3d[data-grupo="cadastro"] { z-index: 100000 !important; }
+
+/* ---------- ficha ---------- */
+.ficha {
+  background: var(--fundo);
+  border-top: 1px solid var(--fio);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--borda) transparent;
+}
+.ficha-topo { display: flex; align-items: center; gap: 10px; padding: 10px 8px 8px 16px; border-bottom: 1px solid var(--fio); position: sticky; top: 0; background: var(--barra); z-index: 1; }
+.ficha-cor { flex: none; width: 14px; height: 14px; border-radius: 4px; border: 1px solid rgba(255, 255, 255, .25); }
+.ficha-titulo { flex: 1; min-width: 0; }
+.ficha-titulo h2 { font-size: 17px; line-height: 1.2; word-break: break-word; }
+.ficha-titulo p { font-size: 13px; color: var(--mudo); }
+.ficha-acoes { display: flex; gap: 8px; padding: 12px 16px 0; }
+.ficha-acoes .btn { flex: 1; }
+.ficha-corpo { padding: 4px 16px 24px; }
+.bloco { margin-top: 18px; }
+.bloco h3 { font-size: 14px; margin-bottom: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.destaque-texto { font-weight: 600; margin-bottom: 4px; }
+
+/* mobile: a ficha sobe de baixo (bottom sheet), acima da barra de abas */
+@media (max-width: 899.98px) {
+  .ficha {
+    position: fixed;
+    left: 0; right: 0;
+    bottom: calc(var(--abas-h) + env(safe-area-inset-bottom));
+    max-height: 62dvh;
+    border-radius: 14px 14px 0 0;
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-bottom: 0;
+    z-index: 1200;
+    transform: translateY(110%);
+    visibility: hidden;
+    transition: transform .22s ease, visibility 0s linear .22s;
+  }
+  .palco.com-ficha .ficha { transform: none; visibility: visible; transition: transform .22s ease; }
+  .palco.com-ficha .vista-painel { padding-bottom: 62dvh; }
+  .abas {
+    order: 99;
+    border-bottom: 0;
+    border-top: 1px solid var(--fio);
+    padding: 0 0 env(safe-area-inset-bottom);
+    z-index: 1300;
+  }
+  .aba { flex: 1; flex-direction: column; gap: 2px; min-height: var(--abas-h); padding: 6px 0; font-size: 12px; border-bottom: 0; border-top: 3px solid transparent; }
+  .aba[aria-selected="true"] { border-top-color: var(--azul); }
+  .so-desktop { display: none !important; }
+}
+
+/* desktop: ficha numa coluna à direita */
+@media (min-width: 900px) {
+  .topo { padding: 10px 24px; }
+  .faixa-demo { padding: 6px 24px; font-size: 12.5px; }
+  .abas { padding: 0 16px; }
+  .ficha { display: none; flex: none; width: 380px; border-top: 0; border-left: 1px solid var(--fio); }
+  .palco.com-ficha .ficha { display: block; }
+  .vistas.lado { display: grid; grid-template-columns: 1fr 1fr; }
+  .vistas.lado .vista { position: relative; inset: auto; min-width: 0; }
+  .vistas.lado .vista-mapa { border-right: 2px solid var(--borda); }
+}
+
+/* ---------- painel: a sala de operação ---------- */
+.carregando-texto { padding: 24px 16px; color: var(--mudo); }
+.acoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.acoes .btn { flex: 1 1 130px; }
+.acoes.pequeno { margin-top: 10px; }
+.acoes.pequeno .btn { flex: 0 1 auto; font-size: 13.5px; }
+.mudo { color: var(--mudo); font-size: 14px; }
+.nota { margin-top: 8px; font-size: 13px; }
+
+/* --pad é o respiro lateral da coluna (e o quanto uma linha de sensor sangra até a borda);
+   --dobra-pad é o respiro de dentro das dobras: no celular elas ocupam a largura toda, no computador
+   a coluna já tem o respiro. */
+.painel { --pad: 16px; --dobra-pad: 16px; display: flex; flex-direction: column; padding-bottom: 24px; }
+.sala-esq, .sala-meio, .sala-dir { display: contents; }
+
+.sala-titulo, .dobra-subtitulo {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--mudo);
+}
+.sala-titulo { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 10px; }
+.dobra-subtitulo { margin: 16px 0 8px; }
+
+/* a frase de condição fica direto no fundo: é o que a banca lê primeiro */
+.condicao-frase { font-size: 17px; line-height: 1.35; font-weight: 600; text-wrap: pretty; }
+/* 55 traços em 343 px (375 menos as margens) dão ~4 px cada: ainda se vê o laranja sozinho. */
+.faixa-ativos { display: flex; gap: 2px; height: 12px; margin-top: 12px; }
+.traco { flex: 1 1 0; min-width: 2px; border-radius: 2px; background: #33475A; }
+.condicao-legenda { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 8px; color: var(--mudo); font-size: 12px; }
+
+/* linhas que abrem ao toque: o cabeçalho inteiro é um botão, e o conteúdo aberto fica fora dele */
+.linha-cab {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.linha-cab:focus-visible { outline-offset: -3px; }
+.linha-corpo { padding-top: 4px; }
+.linha-seta { color: var(--mudo); font-size: 18px; line-height: 1; transition: transform .15s ease; }
+.aberta > .linha-cab .linha-seta { transform: rotate(90deg); }
+.linha-mede { margin-top: 10px; font-size: 13px; color: var(--texto2); }
+.linha-meta { margin-top: 4px; font-size: 12.5px; color: var(--mudo); }
+
+/* o que pede atenção: a cor só na borda esquerda */
+.atencao-lista { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.atencao-linha { border-left: 4px solid var(--cor, var(--ambar)); scroll-margin-top: 252px; }
+.atencao-cab { display: grid; grid-template-columns: 1fr auto; gap: 1px 8px; padding: 2px 0 2px 11px; }
+.atencao-cab:hover .atencao-titulo { color: #fff; }
+.atencao-titulo { grid-column: 1; font-size: 14px; font-weight: 600; color: var(--texto); }
+.atencao-texto { grid-column: 1; font-size: 13px; color: var(--texto2); }
+.atencao-cab .linha-seta { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+.atencao-linha.aberta { background: var(--superficie); padding-bottom: 12px; }
+.atencao-linha .linha-corpo { padding: 4px 12px 0 11px; }
+
+.foto-patologia { position: relative; margin: 8px 0 0; }
+.foto-patologia img { display: block; width: 100%; max-height: 190px; object-fit: cover; border-radius: 8px; }
+.foto-patologia figcaption { margin-top: 6px; font-size: 12px; line-height: 1.4; color: var(--mudo); }
+.foto-selo { position: absolute; top: 8px; left: 8px; }
+.foto-falhou { padding: 14px 12px; border: 1px dashed var(--borda); border-radius: 8px; font-size: 13px; }
+
+/* dobras: no celular linhas que abrem; no computador, as duas "fixas" viram títulos de coluna */
+.dobra { border-top: 1px solid var(--fio); }
+.dobra > summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 var(--dobra-pad);
+  list-style: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.dobra > summary::-webkit-details-marker { display: none; }
+.dobra > summary:focus-visible { outline-offset: -3px; }
+.dobra-titulo { flex: 1; min-width: 0; }
+.dobra-resumo { color: var(--mudo); font-weight: 500; font-size: 13px; text-align: right; }
+.dobra-seta { color: var(--mudo); font-size: 18px; line-height: 1; transition: transform .15s ease; }
+.dobra[open] > summary .dobra-seta { transform: rotate(90deg); }
+.dobra-corpo { padding: 0 var(--dobra-pad) 16px; }
+.dobra-ativos { border-bottom: 1px solid var(--fio); }
+
+/* agenda: um só DOM; lista vertical no celular, trilho horizontal no computador */
+.agenda { list-style: none; padding: 0; }
+.marco { display: grid; grid-template-columns: 96px 1fr; gap: 10px; padding: 9px 0 9px 10px; border-left: 3px solid var(--cor, transparent); border-bottom: 1px solid var(--fio); }
+.marco:last-child { border-bottom: 0; }
+.marco time { display: block; font-weight: 700; font-size: 13.5px; color: #fff; font-variant-numeric: tabular-nums; }
+.marco-quando { display: block; font-size: 12px; color: var(--mudo); }
+.marco-oque { display: block; font-size: 14px; color: var(--texto2); }
+.marco-quanto { display: block; font-size: 12.5px; font-weight: 600; color: var(--mudo); }
+.marco-data, .marco-texto { min-width: 0; }
+
+/* sensores */
+.sensores-grupo { margin: 14px 0 4px; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--mudo); }
+.sensores-grupo:first-child { margin-top: 0; }
+/* A mesma cor do rótulo do grupo no 3D, para a lista e a janela do meio falarem a mesma língua. */
+.sensores-grupo[data-grupo]::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 7px; border-radius: 2px; vertical-align: -1px; }
+.sensores-grupo[data-grupo="ponte"]::before { background: var(--grupo-ponte); }
+.sensores-grupo[data-grupo="talude"]::before { background: var(--grupo-talude); }
+.sensores-lista { list-style: none; padding: 0; }
+.sensor { margin-inline: calc(var(--pad) * -1); border-bottom: 1px solid var(--fio); scroll-margin-top: 252px; }
+.sensor.aberta { background: var(--superficie); }
+.sensor-cab { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 10px; padding: 9px var(--pad); }
+.sensor-cab:hover { background: rgba(21, 34, 46, .6); }
+.sensor-id { min-width: 0; font-size: 13px; color: var(--texto2); }
+.sensor-id b { display: block; font-size: 13.5px; color: #fff; }
+.sensor-sub { display: block; }
+.sensor-valor { white-space: nowrap; font-size: 20px; font-weight: 650; text-align: right; font-variant-numeric: tabular-nums; }
+.sensor-valor small { font-size: 12px; font-weight: 500; color: var(--mudo); }
+.curva { grid-column: 1 / -1; display: block; width: 100%; height: 20px; margin-top: 4px; }
+.sensor-corpo { padding: 4px var(--pad) 14px; }
+.grafico-mini { position: relative; height: 170px; margin-top: 10px; }
+
+/* a janela do 3D: o app.js põe o modelo dentro do .slot3d */
+.janela3d { position: relative; display: flex; flex-direction: column; overflow: hidden; background: linear-gradient(180deg, #1B2A38 0%, #101A24 100%); }
+.slot3d { position: relative; isolation: isolate; flex: 1 1 auto; min-height: 0; width: 100%; }
+.ponte-info {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  z-index: 3;
+  max-width: calc(100% - 24px);
+  padding: 4px 10px 5px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: rgba(11, 19, 27, .62);
+  text-align: left;
+  cursor: pointer;
+}
+.ponte-info:hover { border-color: var(--borda); }
+.ponte-info b { display: block; font-size: 15px; color: #fff; }
+.ponte-info span { display: block; font-size: 12.5px; line-height: 1.35; color: var(--texto2); }
+.btn-sobre-3d { background: rgba(11, 19, 27, .84); }
+.btn-voltar { position: absolute; right: 12px; top: 10px; z-index: 3; }
+/* Com o "Voltar à ponte" no canto, o texto da ponte cede a largura que ele ocupa. */
+.janela3d.em-voo .ponte-info { max-width: calc(100% - 156px); }
+.dica-3d {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  z-index: 3;
+  padding: 3px 8px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: rgba(11, 19, 27, .5);
+  color: var(--mudo);
+  font-size: 11.5px;
+  pointer-events: none;
+}
+/* O crédito da foto aérea do 3D nasce no canto de baixo à direita; aqui a dica de navegação fica com esse canto. */
+.janela3d .credito-foto-3d { right: auto; left: 12px; bottom: 10px; }
+
+@media (max-width: 899.98px) {
+  .janela3d { order: 1; position: sticky; top: 0; z-index: 20; height: 240px; border-bottom: 1px solid var(--fio); }
+  .ponte-info b { font-size: 14px; }
+  .ponte-info span { font-size: 12px; }
+  .condicao { order: 2; padding: 16px var(--pad) 4px; }
+  .sala-atencao { order: 3; padding: 16px var(--pad) 18px; }
+  .dobra-sensores { order: 4; }
+  .dobra-agenda { order: 5; }
+  .dobra-historico { order: 6; }
+  .dobra-ativos { order: 7; }
+  /* A lista de sensores e a agenda, no celular, precisam de respiro em cima da primeira linha. */
+  .dobra-sensores .dobra-corpo { padding-top: 2px; }
+}
+
+@media (min-width: 900px) {
+  .vista-painel { overflow: hidden; }
+  .painel {
+    --pad: 18px;
+    --dobra-pad: 0px;
+    height: 100%;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(270px, 330px) minmax(0, 1fr) minmax(270px, 330px);
+    grid-template-areas: "esq meio dir";
+  }
+  .sala-esq, .sala-meio, .sala-dir {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--borda) transparent;
+  }
+  .sala-esq { grid-area: esq; padding: 18px var(--pad); }
+  .sala-meio { grid-area: meio; border-left: 1px solid var(--fio); border-right: 1px solid var(--fio); }
+  .sala-dir { grid-area: dir; padding: 18px var(--pad); }
+  .condicao-frase { font-size: 19px; }
+  .condicao-legenda { margin-top: 7px; }
+  .sala-atencao { margin-top: 22px; }
+  .atencao-linha { scroll-margin-top: 0; }
+  .sensor { scroll-margin-top: 0; }
+  .sala-esq > .dobra:first-of-type { margin-top: 22px; }
+
+  .janela3d { flex: 1 1 0; min-height: 260px; }
+  .dobra-agenda { flex: none; padding: 14px var(--pad) 12px; border-top: 1px solid var(--fio); border-bottom: 0; }
+
+  /* as duas dobras "fixas" viram o título da coluna */
+  .dobra-fixa { border-top: 0; }
+  .dobra-fixa > summary {
+    min-height: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--mudo);
+    cursor: default;
+    pointer-events: none;
+  }
+  .dobra-fixa .dobra-resumo, .dobra-fixa .dobra-seta { display: none; }
+  .dobra-fixa > .dobra-corpo { padding: 0; }
+  .dobra-agenda > summary { margin-bottom: 8px; }
+
+  /* agenda como trilho: uma linha de 2px, um marco por evento, igualmente espaçados */
+  .agenda { position: relative; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); }
+  .agenda::before { content: ""; position: absolute; left: 0; right: 0; top: 9px; height: 2px; background: var(--borda); }
+  .marco { display: block; padding: 0 12px 0 0; border: 0; }
+  .marco::before { content: ""; position: relative; display: block; width: 12px; height: 12px; margin: 4px 0 8px; border-radius: 50%; background: var(--cor, var(--azul)); }
+  .marco time { font-size: 13px; }
+  .marco-quando { font-size: 12px; }
+  .marco-oque { margin-top: 2px; font-size: 12px; line-height: 1.35; }
+  .marco-quanto { font-size: 12px; }
+  .dobra-agenda .nota { margin-top: 4px; }
+}
+
+/* Com a ficha aberta ao lado (ou numa janela estreita) sobra pouca largura: a coluna dos sensores
+   desce para baixo da coluna da esquerda, e o 3D e a agenda ficam com o resto. */
+@media (min-width: 900px) {
+  .palco.com-ficha .painel {
+    grid-template-columns: minmax(270px, 330px) minmax(0, 1fr);
+    grid-template-areas: "esq meio" "dir meio";
+    grid-template-rows: minmax(0, 1.5fr) minmax(0, 1fr);
+  }
+  .palco.com-ficha .sala-dir { border-top: 1px solid var(--fio); }
+}
+@media (min-width: 900px) and (max-width: 1139.98px) {
+  .painel {
+    grid-template-columns: minmax(270px, 330px) minmax(0, 1fr);
+    grid-template-areas: "esq meio" "dir meio";
+    grid-template-rows: minmax(0, 1.5fr) minmax(0, 1fr);
+  }
+  .sala-dir { border-top: 1px solid var(--fio); }
+}
+
+/* ---------- rótulos dos pinos no 3D ---------- */
+.ancora-3d { position: relative; width: 0; height: 0; }
+/* O fundo diz o grupo (data-grupo) e a faixa da esquerda diz o estado (--cor); escolhido pelo dono em
+   02/11/2026, entre cor e formato, porque com o fundo igual em todos "está tudo junto". */
+.rotulo-3d {
+  position: absolute;
+  pointer-events: auto;
+  min-height: 28px;
+  padding: 2px 10px 2px 8px;
+  border: 0;
+  border-left: 4px solid var(--cor);
+  border-radius: 4px;
+  background: rgba(9, 16, 23, .88);
+  color: var(--texto);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.rotulo-3d[data-grupo="ponte"] { background: var(--grupo-ponte); }
+.rotulo-3d[data-grupo="talude"] { background: var(--grupo-talude); }
+.rotulo-3d[data-grupo="atencao"] { background: var(--grupo-atencao); }
+.ancora-3d[hidden] { display: none; }
+/* O fio liga o rótulo ao ponto; o rótulo fica a ~12 px do ponto, e o fio cobre esse vão. */
+.rotulo-3d::after { content: ""; position: absolute; width: 1px; height: 10px; background: var(--cor); pointer-events: none; }
+.rotulo-3d.lado-cima, .rotulo-3d:not([class*="lado-"]) { bottom: 12px; left: 0; transform: translateX(-50%); }
+.rotulo-3d.lado-cima::after, .rotulo-3d:not([class*="lado-"])::after { left: 50%; top: 100%; }
+.rotulo-3d.lado-esq { bottom: 12px; right: -4px; }
+.rotulo-3d.lado-dir { bottom: 12px; left: -4px; }
+.rotulo-3d.lado-baixo-esq { top: 12px; right: -4px; }
+.rotulo-3d.lado-baixo-dir { top: 12px; left: -4px; }
+.rotulo-3d.lado-esq::after { right: 4px; top: 100%; }
+.rotulo-3d.lado-dir::after { left: 4px; top: 100%; }
+.rotulo-3d.lado-baixo-esq::after { right: 4px; bottom: 100%; }
+.rotulo-3d.lado-baixo-dir::after { left: 4px; bottom: 100%; }
+.rotulo-3d:hover { filter: brightness(1.2); }
+.rotulo-3d[aria-pressed="true"] { background: var(--cor); color: #0B131B; }
+
+/* ---------- selos e pílulas ---------- */
+.selo {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.selo-ficticio { background: #3A3214; color: #F0D98A; border: 1px solid #5A4B1C; }
+.selo-modelo { background: var(--t-verde); color: #9FD8A8; border: 1px solid #25472F; }
+.selo-real { background: #12293D; color: #8CCBFA; border: 1px solid #1F4260; }
+.pilula {
+  display: inline-block;
+  padding: 1px 10px 1px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--cor);
+  background: var(--superficie);
+  background: color-mix(in srgb, var(--cor) 16%, #0F1923);
+  color: var(--texto);
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: inset 4px 0 0 var(--cor);
+}
+
+/* campos e listas */
+.campos { display: grid; grid-template-columns: minmax(96px, 34%) 1fr; gap: 6px 12px; font-size: 14px; }
+.campos dt { color: var(--mudo); }
+.campos dd { min-width: 0; overflow-wrap: anywhere; }
+.campos .mono { font-family: ui-monospace, Consolas, monospace; font-size: 12.5px; }
+.campos.compacto { font-size: 13.5px; grid-template-columns: minmax(90px, 30%) 1fr; margin-top: 6px; }
+.lista-simples { padding-left: 18px; }
+.lista-simples li { margin: 2px 0; }
+
+/* ponte: peças e materiais em linhas, número à esquerda */
+.tocou { margin-top: 12px; padding: 8px 10px; background: var(--t-azul); border-radius: 8px; font-size: 13.5px; }
+.pecas-parte + .pecas-parte { margin-top: 10px; }
+.pecas-titulo { display: flex; justify-content: space-between; font-weight: 600; font-size: 13.5px; border-bottom: 1px solid var(--fio); padding-bottom: 2px; margin-bottom: 4px; }
+.pecas-titulo span { font-variant-numeric: tabular-nums; color: var(--mudo); }
+.pecas { list-style: none; padding: 0; font-size: 13.5px; }
+.pecas li { display: flex; gap: 10px; padding: 1px 0; }
+.pecas-n { flex: none; min-width: 42px; text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+
+/* sensores da estrutura, na ficha da ponte */
+.sensores-ponte { list-style: none; padding: 0; }
+.sensor-ponte { padding: 8px 0; border-bottom: 1px solid var(--fio); }
+.sensor-ponte:last-child { border-bottom: 0; }
+.sensor-ponte-topo { font-size: 14px; }
+.sensor-ponte-topo b { color: #fff; }
+.sensor-ponte-valor { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-top: 2px; }
+.sensor-ponte-numero { font-size: 18px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.sensor-ponte-tipo { margin-top: 2px; font-size: 12.5px; }
+
+/* inspeções */
+.inspecao-proxima { padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--fio); }
+.inspecoes { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.inspecao { display: flex; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--fio); }
+.inspecao:last-child { border-bottom: 0; padding-bottom: 0; }
+.inspecao-texto { flex: 1; min-width: 0; }
+.inspecao-topo { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-weight: 600; }
+.inspecao-atividade { color: var(--texto2); font-size: 14px; margin-top: 2px; }
+.foto-ilustrativa {
+  flex: none;
+  width: 84px;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background: #1F2C38;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  color: var(--mudo);
+  font-size: 10.5px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.25;
+}
+.foto-inspecao { position: relative; flex: none; width: 84px; height: 84px; }
+.foto-inspecao img { display: block; width: 84px; height: 84px; object-fit: cover; border-radius: 8px; }
+.foto-inspecao .selo { position: absolute; left: 4px; bottom: 4px; padding: 0 6px; font-size: 9.5px; line-height: 1.5; }
+@media (max-width: 420px) {
+  .foto-ilustrativa { width: 64px; height: 64px; font-size: 9px; }
+  .foto-inspecao, .foto-inspecao img { width: 64px; height: 64px; }
+}
+
+/* barras de contagem */
+.barras { display: flex; flex-direction: column; gap: 6px; }
+.barra-linha { display: grid; grid-template-columns: minmax(96px, 38%) 1fr 32px; align-items: center; gap: 10px; font-size: 14px; }
+.barra-nome { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--texto2); }
+.barra-trilho { height: 12px; background: #1A2B3B; border-radius: 6px; overflow: hidden; }
+.barra-cheia { display: block; height: 100%; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .16); }
+.barra-valor { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+
+/* ---------- caixa de erro ---------- */
+.caixa-erro {
+  margin: 12px;
+  padding: 12px 14px;
+  background: #2A1416;
+  border: 1px solid #5A2A2E;
+  border-radius: 10px;
+  color: #F3C9CB;
+  font-size: 14px;
+}
+.caixa-erro p { margin-top: 6px; }
+.caixa-erro .dica { color: #E8A9AD; }
+.caixa-erro .btn { margin-top: 10px; }
+.sala-atencao .caixa-erro, .dobra .caixa-erro, .ficha .caixa-erro { margin: 8px 0 0; }
+
+/* ---------- mapa ---------- */
+.botoes-mapa { display: flex; flex-direction: column; gap: 8px; margin-top: 8px !important; }
+.btn-mapa {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  background: rgba(11, 19, 27, .9);
+  color: var(--texto);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-mapa:hover { background: var(--t-azul); }
+.btn-mapa[aria-pressed="true"] { background: var(--azul); color: #0B131B; border-color: var(--azul); }
+
+.legenda-mapa { background: rgba(11, 19, 27, .92); color: var(--texto); border: 1px solid var(--borda); border-radius: 10px; min-width: 210px; max-width: 76vw; max-height: 60dvh; overflow-y: auto; font-size: 14px; }
+.legenda-mapa summary { min-height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 14px; font-weight: 600; cursor: pointer; }
+.legenda-mapa summary::-webkit-details-marker { display: none; }
+/* Mais clara e maior que a das dobras: aqui ela é o único sinal de que a caixa fecha. */
+.legenda-mapa .dobra-seta { color: var(--texto); font-size: 24px; }
+.legenda-mapa summary:hover { background: rgba(255, 255, 255, .06); }
+.legenda-nome { flex: 1; }
+.legenda-mapa[open] > summary .dobra-seta { transform: rotate(90deg); }
+.legenda-corpo { padding: 0 14px 12px; }
+.legenda-linha { display: flex; align-items: center; gap: 8px; min-height: 32px; cursor: pointer; }
+.legenda-linha.simbolo { cursor: default; }
+.legenda-linha input { width: 18px; height: 18px; margin: 0; }
+.amostra { flex: none; width: 18px; height: 12px; border-radius: 3px; border: 1px solid rgba(255, 255, 255, .3); }
+.amostra.redonda { width: 14px; height: 14px; border-radius: 50%; margin: 0 2px; }
+.amostra.anel { box-shadow: 0 0 0 2px #fff, 0 0 0 3px rgba(0, 0, 0, .3); }
+.legenda-titulo { margin-top: 10px; font-weight: 600; color: var(--mudo); font-size: 13px; }
+.legenda-dica { margin-top: 4px; font-size: 12px; color: var(--mudo); line-height: 1.35; }
+
+.pino-wrap { background: none; border: 0; }
+.pino { position: relative; display: block; width: 22px; height: 22px; margin: 4px; border-radius: 50%; border: 3px solid #fff; background: var(--vermelho); box-shadow: 0 0 0 1px rgba(0, 0, 0, .35); }
+.pino-sensor { background: var(--ambar); }
+.pino-alerta { background: var(--vermelho); }
+.pino::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid var(--vermelho);
+  animation: pulsar 1.8s ease-out infinite;
+}
+.pino-sensor::after { border-color: var(--ambar); }
+.pino-rio { background: #1C71B5; }
+.pino-rio::after { border-color: #1C71B5; }
+@keyframes pulsar { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(2.4); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .pino::after { animation: none; opacity: .5; } }
+.rotulo-mapa { font-weight: 700; font-size: 12px; color: var(--texto); background: rgba(11, 19, 27, .92); border: 1px solid var(--borda); box-shadow: none; }
+.leaflet-tooltip-right.rotulo-mapa::before { border-right-color: var(--borda); }
+.leaflet-tooltip-left.rotulo-mapa::before { border-left-color: var(--borda); }
+
+/* ---------- 3D (aba própria) ---------- */
+.cena-barra {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  pointer-events: none;
+}
+.cena-barra > * { pointer-events: auto; }
+.chk { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; background: rgba(11, 19, 27, .9); border: 1px solid var(--borda); border-radius: 10px; color: var(--texto); font-size: 14px; font-weight: 600; cursor: pointer; }
+.chk input { width: 18px; height: 18px; margin: 0; }
+/* A linha que ensina a navegar: a do mouse só aparece onde há mouse, a do dedo só no toque. */
+.cena-ajuda {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 5;
+  max-width: calc(100% - 20px);
+  padding: 4px 10px;
+  background: rgba(11, 19, 27, .85);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  color: var(--texto2);
+  font-size: 12.5px;
+  line-height: 1.35;
+  pointer-events: none;
+}
+/* Legenda dos grupos do 3D (tres_d.js, criarLegenda): fica acima da linha de ajuda na aba 3D e acima
+   do crédito no Painel. No celular vira uma fileira com o nome curto. */
+.legenda-3d { position: absolute; left: 10px; bottom: 46px; z-index: 6; display: flex; flex-direction: column; gap: 6px; }
+.legenda-3d label { display: flex; align-items: center; gap: 8px; min-height: 30px; padding: 3px 10px; background: rgba(11, 19, 27, .88); border: 1px solid var(--borda); border-radius: 8px; color: var(--texto); font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.legenda-3d input { width: 16px; height: 16px; margin: 0; }
+.legenda-3d-amostra { width: 14px; height: 14px; border-radius: 3px; }
+.legenda-3d [data-grupo="ponte"] .legenda-3d-amostra { background: var(--grupo-ponte); }
+.legenda-3d [data-grupo="talude"] .legenda-3d-amostra { background: var(--grupo-talude); }
+.legenda-3d [data-grupo="atencao"] .legenda-3d-amostra { background: var(--grupo-atencao); }
+.legenda-3d-curto { display: none; }
+.chk-curto { display: none; }
+.janela3d .legenda-3d { bottom: 38px; }
+@media (max-width: 700px) {
+  /* Acima do crédito, que no celular tem duas linhas (35 px): no Painel ele fica a 10 px do pé, e na
+     aba 3D a 54 px, por cima da linha de ajuda. Medido em 375 px em 02/11/2026. */
+  .legenda-3d { flex-direction: row; flex-wrap: wrap; gap: 4px; bottom: 96px; }
+  .janela3d .legenda-3d { bottom: 52px; }
+  .legenda-3d label { min-height: 32px; padding: 2px 8px; gap: 6px; font-size: 12px; }
+  .legenda-3d-nome { display: none; }
+  .legenda-3d-curto { display: inline; }
+  /* Com "Nova inspeção" a barra do 3D foi a três linhas (148 px) em 375 px; sem o "Mostrar" das
+     caixas a segunda linha cabe (321 de 355 px) e a barra volta a duas. */
+  .chk-nome { display: none; }
+  .chk-curto { display: inline; }
+}
+
+.so-toque { display: none; }
+@media (hover: none), (pointer: coarse) {
+  .so-mouse { display: none; }
+  .so-toque { display: block; }
+}
+.cena-status { position: absolute; inset: 0; z-index: 6; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(16, 26, 36, .85); }
+.carregando { width: min(320px, 100%); text-align: center; background: var(--superficie); border: 1px solid var(--borda); border-radius: 10px; padding: 16px; }
+.carregando progress { width: 100%; height: 10px; margin-top: 10px; accent-color: var(--azul); }
+.cena-status .caixa-erro { max-width: 420px; background: #2A1416; }
+
+/* ---------- aviso e janela de compartilhar ---------- */
+.aviso {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--abas-h) + 16px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 1500;
+  max-width: min(92vw, 520px);
+  padding: 10px 14px;
+  background: #1B2A38;
+  border: 1px solid var(--borda);
+  color: var(--texto);
+  border-radius: 10px;
+  font-size: 14px;
+}
+@media (min-width: 900px) { .aviso { bottom: 24px; } }
+
+.dlg { border: 0; padding: 0; background: transparent; max-width: 94vw; color: var(--texto); }
+.dlg::backdrop { background: rgba(5, 9, 13, .7); }
+.dlg-cartao { width: min(520px, 94vw); max-height: 94dvh; overflow-y: auto; background: var(--superficie); border: 1px solid var(--borda); border-radius: 14px; padding: 12px 20px 20px; }
+.dlg-topo { display: flex; align-items: center; justify-content: space-between; }
+.dlg-topo h2 { font-size: 19px; }
+/* O QR precisa de fundo branco para a câmera do celular ler. */
+.qr-caixa { margin: 12px auto; width: min(76vw, 52dvh, 420px); background: #fff; border: 1px solid var(--borda); }
+.qr-caixa svg { display: block; width: 100%; height: auto; }
+.link-rotulo { display: block; font-size: 13px; color: var(--mudo); margin-top: 8px; }
+.link-campo { width: 100%; min-height: 44px; margin-top: 4px; padding: 0 10px; border: 1px solid var(--borda); border-radius: 10px; font: 14px ui-monospace, Consolas, monospace; color: var(--texto); background: var(--fundo); }
+.link-linha { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+.link-msg { font-size: 14px; color: var(--mudo); }
+
+/* Leaflet: controles com alvo de toque decente */
+.leaflet-touch .leaflet-bar a { width: 40px; height: 40px; line-height: 40px; }
+
+@media (max-width: 420px) {
+  .topo { padding: 6px 12px; gap: 8px; }
+  .topo h1 { font-size: 16px; }
+  .topo p { font-size: 11.5px; }
+  .topo .btn { padding: 0 12px; font-size: 14px; }
+  .faixa-demo { padding: 5px 12px; font-size: 11.5px; }
+  .condicao-frase { font-size: 17px; }
+}
+
+/* ---------- crédito da foto no 3D ---------- */
+.credito-foto-3d { position: absolute; right: 10px; bottom: 10px; z-index: 5; margin: 0; padding: 2px 8px; background: rgba(11, 19, 27, .8); border-radius: 6px; color: var(--mudo); font-size: 11px; line-height: 1.4; pointer-events: none; }
+.credito-foto-3d[hidden] { display: none; }
+.credito-foto-3d span + span::before { content: ' · '; }
+/* No celular a linha de ajuda ocupa a largura toda embaixo; o crédito sobe para não ficar por cima dela.
+   Com o crédito do rio junto (OpenStreetMap), em 375 px ele quebrava em duas linhas e passava por cima da
+   dica "um dedo gira" da janela do Painel: cada crédito vai numa linha, e a caixa para antes da dica. */
+@media (max-width: 700px) {
+  .credito-foto-3d { bottom: 54px; }
+  .credito-foto-3d span { display: block; }
+  .credito-foto-3d span + span::before { content: none; }
+  .janela3d .credito-foto-3d { max-width: calc(100% - 110px); }
+}
+
+/* ---------- cadastro de inspeção pelo link ---------- */
+/* O azul do grupo é o do selo "cadastrado pelo link": a mesma cor diz, na lista, no rótulo do 3D e no
+   pino do mapa, que aquele ponto foi gravado por quem abriu o link e não vem do modelo. */
+:root { --grupo-cadastro: #1F5A8A; }
+
+.selo-link { background: #0E3550; color: #9AD4FF; border: 1px solid #1F5A8A; }
+.pino-cadastro { background: var(--azul); }
+.pino-cadastro::after { border-color: var(--azul); }
+.rotulo-3d[data-grupo="cadastro"] { background: var(--grupo-cadastro); }
+.legenda-3d [data-grupo="cadastro"] .legenda-3d-amostra { background: var(--grupo-cadastro); }
+
+/* Com a faixa armada o próximo toque no mapa ou no 3D é o ponto do achado, não abrir ficha. */
+body.armando-cadastro #mapa, body.armando-cadastro #mapa .leaflet-interactive, body.armando-cadastro #cena canvas { cursor: crosshair; }
+
+/* Acima das abas no celular (elas ficam embaixo, z 1300) e acima da ficha (1200); o aviso sobe para não ficar por baixo. */
+.faixa-cadastro {
+  position: fixed;
+  left: 8px;
+  right: 8px;
+  bottom: calc(var(--abas-h) + 8px + env(safe-area-inset-bottom));
+  z-index: 1250;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 6px 6px 14px;
+  background: var(--superficie);
+  border: 1px solid var(--azul);
+  border-radius: 10px;
+  color: var(--texto);
+  font-size: 14px;
+  font-weight: 600;
+}
+.faixa-cadastro .btn { flex: none; min-height: 40px; }
+body.armando-cadastro .aviso { bottom: calc(var(--abas-h) + 76px + env(safe-area-inset-bottom)); }
+@media (min-width: 900px) {
+  .faixa-cadastro { left: 50%; right: auto; transform: translateX(-50%); bottom: 24px; width: max-content; max-width: 92vw; }
+  body.armando-cadastro .aviso { bottom: 84px; }
+}
+
+/* As inspeções do link podem ter até duas fotos: uma sobre a outra, à direita do texto. */
+.inspecao-fotos { flex: none; display: flex; flex-direction: column; gap: 8px; }
+@media (max-width: 420px) {
+  .inspecao-fotos .foto-ilustrativa { width: 64px; height: 64px; }
+}
+
+/* Editar e apagar uma inspeção do link: botões pequenos no fim do texto, só para quem pode mexer nela.
+   O vermelho é o da caixa de erro e do erro de campo (#5A2A2E, #F3A0A4): o --vermelho puro some no fundo escuro. */
+.inspecao-acoes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.inspecao-acoes .btn { min-height: 36px; padding: 0 12px; font-size: 13.5px; }
+.btn-perigo { border-color: #5A2A2E; color: #F3A0A4; }
+.btn-perigo:hover { background: #2A1416; }
+
+/* "Sou o dono": existe para uma pessoa só, então fica quieto, no tom do texto de apoio. */
+.link-dono { display: inline; margin: 0; padding: 4px 0; border: 0; background: transparent; color: var(--mudo); font: inherit; font-size: 12.5px; cursor: pointer; }
+.link-dono:hover, .link-dono:focus-visible { text-decoration: underline; }
+.bloco > .link-dono { display: block; margin-top: 10px; }
+
+/* A pergunta da palavra-código. */
+.dlg-dono { width: min(420px, 94vw); }
+.dono-cartao .mudo { margin-top: 6px; font-size: 13.5px; line-height: 1.4; }
+.dono-campo { display: block; width: 100%; min-height: 44px; margin-top: 4px; padding: 0 10px; border: 1px solid var(--borda); border-radius: 10px; background: var(--fundo); color: var(--texto); font: inherit; font-size: 16px; }
+.dono-botoes { margin-top: 14px; }
+
+/* O formulário. No celular ocupa a tela toda, com o pé sempre visível e só o miolo rolando; no
+   computador é uma caixa de até 560 px. Campos com 44 px de altura e fonte de 16 px: abaixo disso o
+   iPhone dá zoom ao tocar no campo. */
+.dlg-cadastro { width: min(560px, 94vw); max-width: none; max-height: none; margin: auto; overflow: visible; }
+.cad-cartao {
+  display: flex;
+  flex-direction: column;
+  max-height: 92dvh;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.cad-topo { flex: none; display: flex; align-items: center; gap: 10px; padding: 10px 8px 6px 16px; }
+.cad-topo h2 { font-size: 19px; }
+.cad-topo .btn-fechar { margin-left: auto; }
+.cad-onde { flex: none; padding: 0 16px 10px; font-size: 12.5px; line-height: 1.4; color: var(--mudo); }
+.cad-onde p + p { color: var(--texto2); }
+.cad-abas { flex: none; display: flex; background: var(--barra); border-top: 1px solid var(--fio); border-bottom: 1px solid var(--fio); }
+.cad-aba {
+  flex: 1;
+  min-height: 44px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--mudo);
+  font-weight: 600;
+  cursor: pointer;
+}
+.cad-aba[aria-selected="true"] { color: #8CCBFA; border-bottom-color: var(--azul); }
+.cad-corpo { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 4px 16px 16px; scrollbar-width: thin; scrollbar-color: var(--borda) transparent; }
+.cad-painel { display: flex; flex-direction: column; gap: 14px; padding-top: 12px; }
+
+.cad-campo label, .cad-campo legend, .cad-foto-rotulo { display: block; margin: 0 0 4px; padding: 0; font-size: 13px; font-weight: 600; color: var(--texto2); }
+.cad-campo input[type="text"], .cad-campo input[type="date"], .cad-campo input[type="number"], .cad-campo select, .cad-campo textarea {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  background: var(--fundo);
+  color: var(--texto);
+  font: inherit;
+  font-size: 16px;
+}
+.cad-campo textarea { min-height: 88px; padding: 10px; resize: vertical; line-height: 1.4; }
+.cad-campo [aria-invalid="true"] { border-color: #E06A6A; }
+.cad-campo fieldset[aria-invalid="true"] { border: 1px solid #E06A6A; border-radius: 10px; padding: 8px; }
+.cad-dica { margin-top: 4px; font-size: 12px; line-height: 1.35; color: var(--mudo); }
+.cad-erro-campo { margin-top: 4px; font-size: 13px; line-height: 1.35; color: #F3A0A4; }
+
+.cad-condicao { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; margin: 0; padding: 0; border: 0; }
+.cad-condicao legend { flex: 0 0 100%; }
+.cad-cond { position: relative; flex: 1 1 100px; margin: 0; }
+.cad-cond input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.cad-cond span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  box-shadow: inset 4px 0 0 var(--cor);
+  color: var(--texto);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cad-cond input:checked + span { border-color: var(--cor); background: color-mix(in srgb, var(--cor) 24%, #0F1923); }
+.cad-cond input:focus-visible + span { outline: 3px solid var(--azul); outline-offset: 2px; }
+
+.cad-foto + .cad-foto { padding-top: 14px; border-top: 1px solid var(--fio); }
+.cad-foto-corpo { display: flex; align-items: center; gap: 12px; }
+.cad-foto-mini { flex: none; width: 96px; height: 96px; object-fit: cover; border: 1px solid var(--borda); border-radius: 8px; }
+.cad-foto-info p { margin-bottom: 8px; font-size: 13px; color: var(--mudo); }
+.cad-foto-botoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.cad-foto-espera { font-size: 14px; color: var(--mudo); }
+
+.cad-pe { flex: none; padding: 10px 16px calc(12px + env(safe-area-inset-bottom)); background: var(--barra); border-top: 1px solid var(--fio); }
+.cad-erro-geral { max-height: 32dvh; overflow-y: auto; }
+.cad-erro-geral .caixa-erro { margin: 0 0 8px; }
+.cad-progresso { margin-bottom: 6px; font-size: 13.5px; color: #8CCBFA; }
+.cad-progresso:empty { display: none; }
+.cad-aviso-pe { margin-bottom: 8px; font-size: 12px; line-height: 1.35; color: var(--mudo); }
+.cad-botoes { display: flex; justify-content: flex-end; gap: 8px; }
+.cad-botoes .btn { flex: 1 1 0; min-width: 0; }
+.btn:disabled, .btn-fechar:disabled, .cad-aba:disabled { opacity: .5; cursor: default; }
+
+@media (min-width: 600px) {
+  .cad-botoes .btn { flex: 0 1 auto; min-width: 130px; }
+}
+@media (max-width: 599.98px) {
+  .dlg-cadastro { width: 100vw; height: 100dvh; margin: 0; }
+  .cad-cartao { height: 100%; max-height: none; border: 0; border-radius: 0; }
+}

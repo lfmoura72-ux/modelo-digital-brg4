@@ -1,0 +1,480 @@
+{
+ "origem_utm": [
+  697587.057070869,
+  7707428.50897607,
+  580.847551947886
+ ],
+ "crs": "EPSG:32723",
+ "elementos": {
+  "0_mtaLgOfA8Qw3ktnBYE2L": {
+   "classe": "IfcFlowTerminal",
+   "nome": null,
+   "fonte": "federado"
+  },
+  "2dixY2$dTE694g7jcSCAiF": {
+   "classe": "IfcFlowTerminal",
+   "nome": null,
+   "fonte": "federado"
+  },
+  "1srY$1W5P10vpoPbJdCbpt": {
+   "classe": "IfcBuiltElement",
+   "nome": "TALUDE DE CORTE_ST",
+   "fonte": "federado"
+  },
+  "0vHJamcejBN91MfMCxeweh": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "3YYo_BfF1AE8ZSAK76bRy0": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "2E8fo5G95B49fgF50TgTAs": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "0RPCMFmLL0De5jOsnjGq_X": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "3KTCMb$VbC$QMKaV1Vf$KV": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "3OE_kHa3XDUur9O2VWXW9G": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "3g$1GmIzv8_BgxOKLSDgTE": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "2r_uQlkqb1kwdgsz2HedeS": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "1QmnksAf53pRbhdnd_g5M7": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "33PtnNvdX9pfoA5gEKOiJ3": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "0VzPf8fOb6reKKwab6eBlr": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "2fqxfhXSrEshRqbCknb1Y6": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "06Rgc$EVP7_9kBsHCEmohG": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "3jYp6y30H2YflGszOC92HY": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "1thvq6i4105BpugCRt62aQ": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "3B8mdMkVTBAvHSUO8Mtwe2": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "3ft3hn64PCs87L7LrAo$ox": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "3hxd0fJdD8rPKMoRN_gufB": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "0ycieAUm97hfnthiqHdLSq": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "0$mJlxAIv19eidAF8W5Ne8": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "1khRu_r4PFLOJB0p2dq6hD": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "13Jb5ZU2f2qh6ph_gRx5pF": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "0G4ykeE117ngFHhBTtmHeB": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "1FnQXqhHzB6vpMBJbUi2BT": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "3orEY_MiH05RTfxA4B_D2j": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "2iGE58Do1FwhZJqMxtUAx4": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "38964hEOjFduWVkYpBBflh": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "0q_H__vmD4y97lr8Nh1WkF": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "1MNmv$H299kAS7SXDcdyqp": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "0Nnihb77P7SPzktAegy$ZQ": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "2nZLL1p$52UxjGP2$cbC9Y": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "3givq6pkr3Fhys_9BKbqTw": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "3SMvpQog1D8ePL4YH2Km5i": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "3BCy9M8DfFUBxUvis4ayAB": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "0$YRS4rxP7_88KhknA3LzA": {
+   "classe": "IfcCourse",
+   "nome": "LaneSuperelevationAOR",
+   "fonte": "federado"
+  },
+  "33693uOrf5Zu0xZg$v1bjQ": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "0cQ8UgURz7vg4AOxpCHKB$": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "0DqCwVVO5A$eNVe5w3EVcb": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "3_bLWFkLv7SvadLADISb4d": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "05XBG6IMH0BAFT5sNZVDti": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "0aIUWdzK57TgZD5YRftl2R": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "0_byddWpn3NQZPYXiurUdE": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "0Mvjc0JA57Oxb7C_GO1yJb": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "2othA05vvB$hS$ZdXceGNd": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "2gWHy6BRz53hSHib6YmjXf": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "3SCd6vlq1BhBQuc_Qlrpld": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "2agaDFZ3n1ZxNqjLvG0bbu": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "2cIWJE$N5Ar8o921OWyZ3f": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "3oPBDcdKL3O8pa_YfCUNfP": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "05jtLb9Vb7xP3P$QQxYfxG": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "0ldsuhmFz0if0NRzJRAlBM": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "0e3uyDIaX7PAnRBG7_5AeU": {
+   "classe": "IfcCourse",
+   "nome": "ShoulderExtendAll",
+   "fonte": "federado"
+  },
+  "0tetzqlKH3YO6W4KhX$iEA": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "1rCXOCOJn3oA$lcSd7NyJd": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "11ybZoWVj1_fBetBkvJWT_": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "0JttF4oAXBueUlZrYITewc": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "3wUE_c5kP6h9I_NmJIjrLm": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "2N$IcodpLE_PZYldvkAOjz": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "1YOVT2_Q1FfebvfYPW1NZC": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "1fufjD4891mgiKqjngGIz$": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "0NMHDj03fC9fkpr3s3zrFj": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "3urCbaSrn5YfUT3Pbo7EUS": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "0ERYpSBj9Bp8svki$usZT9": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "2sQGXsyhrAJRLYyTZmkpg5": {
+   "classe": "IfcGeographicElement",
+   "nome": "SUPERFÍCIE CORREDOR DE TERRAPLENAGEM (1)",
+   "fonte": "federado"
+  },
+  "0pg1BPvMT8$OeD1ee7WLok": {
+   "classe": "IfcGeographicElement",
+   "nome": "AIW_Existing_Ground",
+   "fonte": "federado"
+  },
+  "0cPnXfldX2J9OfUu20weWt": {
+   "classe": "IfcCourse",
+   "nome": "BASE DE RACHÃO TRAVADA COM BICA CORRIDA_ST",
+   "fonte": "federado"
+  },
+  "0Y8Bkks8HBt818wmhuxDGC": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "39USgcaIf2$8AG4BRvEj8p": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "3p0p1Kw851B8DxNubHnmHu": {
+   "classe": "IfcEarthworksFill",
+   "nome": "TALUDE DE ATERRO_ST",
+   "fonte": "federado"
+  },
+  "1qTSSdChPDpBhnT6llhkuO": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "1Xp5xRy7j7TfalkOWwln7h": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "0JIW$N9Lz8fvH7pdmZXpDo": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "0eLnwb6gv4geynSoXSilW7": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "10$FeS2CzDHx2dno$_zYGV": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "3g7cgSkNHBkOEJhI7l6e3y": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "1V4_SQ$Uf4ivtJiTRP0mdt": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "3xso73Vp51RO8m85RLoQv7": {
+   "classe": "IfcBuildingElementProxy",
+   "nome": "DISSIPADOR DE ENERGIA_ST",
+   "fonte": "federado"
+  },
+  "0DkinliQHDDwssmDRwF04i": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "0FrudaAXn3j9Xk7IN0qDtx": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "0D1BRA2Pj23Q2Eyxe4ynzD": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "1IVVNSJUP4XORoYcX7T_RU": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "2Y0n6JSdX3CgX_7$x7HoNC": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "2ZgCa0oPXEiAByhsiY7Nsd": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "0tSXI2F5n64x2Byi8THeQx": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "24Oa$AvqvD8OLAuP5J7arV": {
+   "classe": "IfcPipeSegment",
+   "nome": "TUBO DE CONCRETO 800mm PA2_ST",
+   "fonte": "federado"
+  },
+  "PONTE_IfcBeam": {
+   "classe": "IfcBeam",
+   "nome": "Ponte: IfcBeam (63 peças)",
+   "fonte": "ponte"
+  },
+  "PONTE_IfcBuildingElementProxy": {
+   "classe": "IfcBuildingElementProxy",
+   "nome": "Ponte: IfcBuildingElementProxy (78 peças)",
+   "fonte": "ponte"
+  },
+  "PONTE_IfcCovering": {
+   "classe": "IfcCovering",
+   "nome": "Ponte: IfcCovering (5 peças)",
+   "fonte": "ponte"
+  },
+  "PONTE_IfcFooting": {
+   "classe": "IfcFooting",
+   "nome": "Ponte: IfcFooting (4 peças)",
+   "fonte": "ponte"
+  },
+  "PONTE_IfcPile": {
+   "classe": "IfcPile",
+   "nome": "Ponte: IfcPile (14 peças)",
+   "fonte": "ponte"
+  },
+  "PONTE_IfcSlab": {
+   "classe": "IfcSlab",
+   "nome": "Ponte: IfcSlab (1090 peças)",
+   "fonte": "ponte"
+  }
+ }
+}

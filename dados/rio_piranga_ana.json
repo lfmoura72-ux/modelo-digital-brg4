@@ -1,0 +1,85 @@
+{
+ "fonte": {
+  "orgao": "ANA, Hidroweb (HidroSerieHistorica)",
+  "codigo_estacao": "56075000",
+  "nome_estacao": "Porto Firme",
+  "rio": "Piranga",
+  "municipio": "Porto Firme",
+  "uf": "MG",
+  "area_drenagem_km2": 4260,
+  "url": "http://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica?codEstacao=56075000&dataInicio=&dataFim=&tipoDados=3&nivelConsistencia=",
+  "distancia_da_ponte": "~6 km rio abaixo",
+  "baixado_em": "2026-11-02"
+ },
+ "periodo": {
+  "inicio": "1938-06-01",
+  "fim": "2026-02-28",
+  "meses": 1053,
+  "meses_consistidos": 1027,
+  "meses_brutos": 26,
+  "dias_com_dado": 31997
+ },
+ "unidade": "m³/s, vazão média diária",
+ "media": 70.2,
+ "q95": 23.9,
+ "media_por_mes": [
+  125.6,
+  105.6,
+  98.1,
+  73.7,
+  56.6,
+  49.0,
+  42.9,
+  37.8,
+  37.8,
+  46.0,
+  68.7,
+  103.6
+ ],
+ "criterio_ano": "ano civil (jan–dez), só anos com os 12 meses",
+ "anos_completos": 86,
+ "cheia_anual_media": 362.2,
+ "maiores_cheias": [
+  {
+   "ano": 2012,
+   "data": "2012-01-03",
+   "valor": 1074.7
+  },
+  {
+   "ano": 1961,
+   "data": "1961-02-16",
+   "valor": 836.2
+  },
+  {
+   "ano": 2008,
+   "data": "2008-12-17",
+   "valor": 833.9
+  },
+  {
+   "ano": 1966,
+   "data": "1966-01-14",
+   "valor": 790.1
+  },
+  {
+   "ano": 1992,
+   "data": "1992-01-25",
+   "valor": 787.4
+  }
+ ],
+ "cheia_de": {
+  "ano": 2022,
+  "data": "2022-01-11",
+  "valor": 664.6
+ },
+ "gumbel": {
+  "10_anos": 598.3,
+  "100_anos": 930.0
+ },
+ "descartados": [
+  {
+   "data": "2024-12-10",
+   "valor": 0.0,
+   "motivo": "vazão zero: falha de leitura (o rio não seca; a menor vazão do resto da série é de 8,4 m³/s)"
+  }
+ ]
+}

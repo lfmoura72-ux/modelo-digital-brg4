@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gêmeo digital · BRG4</title>
+  <meta name="description" content="Gêmeo digital de uma rodovia com ponte (BRG4): mapa, modelo 3D e painel, com a geometria e os IDs vindos do modelo real (IFC + COBie).">
+  <meta name="theme-color" content="#0B131B">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="estilo.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-titulos">
+      <h1>Gêmeo digital · BRG4</h1>
+      <p>Rodovia com ponte · Presidente Bernardes/MG · estaca 0+000 a 0+779</p>
+    </div>
+    <button id="btn-compartilhar" class="btn" type="button">Compartilhar</button>
+  </header>
+
+  <div class="faixa-demo" role="note">
+    <strong>Demonstração</strong> · inspeções, patologia, sensores e a operação da ponte são fictícios. Geometria, IDs e tarefas vêm do modelo real (IFC + COBie). Situação simulada em <span id="faixa-data">20/09/2027</span>.
+  </div>
+
+  <nav class="abas" role="tablist" aria-label="Vistas">
+    <button class="aba" role="tab" type="button" data-vista="painel" aria-selected="true" aria-controls="vista-painel">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v9H4zM13 4h7v5h-7zM13 11h7v9h-7zM4 15h7v5H4z"/></svg>
+      <span>Painel</span>
+    </button>
+    <button class="aba" role="tab" type="button" data-vista="mapa" aria-selected="false" aria-controls="vista-mapa">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5zM9 4v13.5M15 6.5V20"/></svg>
+      <span>Mapa</span>
+    </button>
+    <button class="aba" role="tab" type="button" data-vista="3d" aria-selected="false" aria-controls="vista-3d">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12 4 7.5M12 12v9"/></svg>
+      <span>3D</span>
+    </button>
+  </nav>
+
+  <main class="palco">
+    <div class="vistas">
+      <section id="vista-painel" class="vista vista-painel" role="tabpanel" aria-label="Painel"></section>
+
+      <section id="vista-mapa" class="vista vista-mapa" role="tabpanel" aria-label="Mapa" hidden>
+        <div id="mapa"></div>
+      </section>
+
+      <section id="vista-3d" class="vista vista-3d" role="tabpanel" aria-label="Modelo 3D" hidden>
+        <div id="cena" class="cena"></div>
+        <div class="cena-barra">
+          <button id="btn-ver-tudo" class="btn-mapa" type="button">Ver tudo</button>
+          <button id="btn-pino-patologia" class="btn-mapa" type="button">Patologia</button>
+          <button id="btn-pino-sensor" class="btn-mapa" type="button">Talude</button>
+          <button id="btn-pino-rio" class="btn-mapa" type="button">Rio</button>
+          <button id="btn-nova-inspecao-3d" class="btn-mapa" type="button" aria-pressed="false">Nova inspeção</button>
+          <label class="chk"><input id="chk-ponte" type="checkbox" checked> <span class="chk-nome">Mostrar ponte</span><span class="chk-curto">Ponte</span></label>
+          <label class="chk"><input id="chk-terreno" type="checkbox" checked> <span class="chk-nome">Mostrar terreno</span><span class="chk-curto">Terreno</span></label>
+        </div>
+        <p class="cena-ajuda so-mouse">Rodinha: aproxima · rodinha apertada: arrasta · Shift + rodinha (ou botão direito): gira · clique: abre a ficha</p>
+        <p class="cena-ajuda so-toque">Um dedo gira · dois dedos aproximam e arrastam · toque abre a ficha</p>
+        <div id="cena-status" class="cena-status" hidden></div>
+      </section>
+    </div>
+
+    <aside id="ficha" class="ficha" aria-label="Ficha do ativo" aria-hidden="true"></aside>
+  </main>
+
+  <div id="aviso" class="aviso" role="status" aria-live="polite" hidden></div>
+
+  <dialog id="dlg-compartilhar" class="dlg">
+    <div class="dlg-cartao">
+      <div class="dlg-topo">
+        <h2>Compartilhar</h2>
+        <button type="button" class="btn-fechar btn-fechar-dlg" aria-label="Fechar">×</button>
+      </div>
+      <p class="mudo">Aponte a câmera do celular para o código.</p>
+      <div class="qr-caixa"></div>
+      <label class="link-rotulo" for="link-campo">Endereço</label>
+      <input id="link-campo" class="link-campo" type="text" readonly>
+      <div class="link-linha">
+        <button type="button" class="btn btn-primario btn-copiar">Copiar link</button>
+        <span class="link-msg" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

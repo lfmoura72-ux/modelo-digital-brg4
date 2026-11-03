@@ -1,0 +1,1815 @@
+{
+ "aviso": "Dados FICTÍCIOS, só para demonstrar o gêmeo digital do BRG4.",
+ "data_simulada": "2027-09-20",
+ "inspecoes": [
+  {
+   "id_ativo": "BUEIRO_001",
+   "atividade": "Inspeção de drenagem (M3 do plano)",
+   "data_planejada": "2027-03-15",
+   "data_executada": "2027-03-16",
+   "responsavel": "Equipe de conservação 01",
+   "condicao": "Regular",
+   "nao_conformidade": "assoreamento parcial na boca de entrada",
+   "servico_realizado": "nenhum (só inspeção)",
+   "decisao": "conservar",
+   "proxima_data": "2027-09-15",
+   "status": "executada",
+   "custo_rs": null,
+   "foto_1": "BUEIRO_001_20270316_1.jpg",
+   "observacao": "a limpeza de M8 já está no plano",
+   "local": "entrada"
+  },
+  {
+   "id_ativo": "BUEIRO_001",
+   "atividade": "Limpeza de bueiro (M8 do plano)",
+   "data_planejada": "2027-08-15",
+   "data_executada": "2027-08-19",
+   "responsavel": "Equipe de conservação 01",
+   "condicao": "Boa",
+   "nao_conformidade": null,
+   "servico_realizado": "remoção do assoreamento e desobstrução da boca de entrada",
+   "decisao": "conservar",
+   "proxima_data": "2027-09-15",
+   "status": "executada",
+   "custo_rs": 1850.0,
+   "foto_1": "BUEIRO_001_20270819_1.jpg",
+   "observacao": "materiais: caminhão basculante, retroescavadeira",
+   "local": "entrada"
+  },
+  {
+   "id_ativo": "BUEIRO_001",
+   "atividade": "Inspeção de drenagem (M9 do plano)",
+   "data_planejada": "2027-09-15",
+   "data_executada": "2027-09-15",
+   "responsavel": "Equipe de conservação 01",
+   "condicao": "Ruim",
+   "nao_conformidade": "erosão no pé do dissipador e fissura na ala da boca de saída",
+   "servico_realizado": "nenhum (só inspeção)",
+   "decisao": "reparar",
+   "proxima_data": "2027-10-20",
+   "status": "executada",
+   "custo_rs": null,
+   "foto_1": "BUEIRO_001_20270915_1.jpg",
+   "observacao": "OS-2027-014: recompor a ala e o enrocamento do dissipador antes das chuvas",
+   "local": "saida",
+   "foto_ilustrativa": "dados/fotos/fissura_ilustrativa.jpg"
+  }
+ ],
+ "proximas_inspecoes": [
+  {
+   "id_ativo": "ATERRO_001",
+   "atividade": "Roçada",
+   "intervalo_meses": 6,
+   "data_planejada": "2028-03-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "BASE_003",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "BASE_004",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "BASE_005",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "BASE_006",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "BASE_009",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "BASE_010",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "BASE_011",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "BASE_012",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "BUEIRO_001",
+   "atividade": "Limpeza de bueiro",
+   "intervalo_meses": 6,
+   "data_planejada": "2028-03-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "Boca_Bueiro_004",
+   "atividade": "Limpeza de bueiro",
+   "intervalo_meses": 6,
+   "data_planejada": "2028-03-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "Boca_Bueiro_005",
+   "atividade": "Limpeza de bueiro",
+   "intervalo_meses": 6,
+   "data_planejada": "2028-03-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "CORTE_001",
+   "atividade": "Roçada",
+   "intervalo_meses": 6,
+   "data_planejada": "2028-03-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "Dissipador_002",
+   "atividade": "Limpeza de bueiro",
+   "intervalo_meses": 6,
+   "data_planejada": "2028-03-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_003",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_004",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_005",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_006",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_009",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_010",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_011",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_012",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_2_003",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_2_004",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_2_005",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_2_006",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_2_009",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_2_010",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_2_011",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "REVESTIMENTO_2_012",
+   "atividade": "Selagem de trincas",
+   "intervalo_meses": 24,
+   "data_planejada": "2029-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_002",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_003",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_004",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_005",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_006",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_007",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_008",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_009",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_010",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_011",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_012",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_013",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_014",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_015",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_001_016",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_003",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_004",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_005",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_006",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_009",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_010",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_011",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUB_BASE_012",
+   "atividade": "Inspeção de deflexão",
+   "intervalo_meses": 36,
+   "data_planejada": "2030-09-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  },
+  {
+   "id_ativo": "SUPERFÍCIE CORREDOR DE TERRAPLENAGEM",
+   "atividade": "Roçada",
+   "intervalo_meses": 6,
+   "data_planejada": "2028-03-20",
+   "data_executada": null,
+   "responsavel": "Equipe de conservação 01",
+   "condicao": null,
+   "status": "planejada"
+  }
+ ],
+ "patologia": {
+  "id": "PAT-2027-003",
+  "id_ativo": "BUEIRO_001",
+  "titulo": "Fissura na ala da boca de saída",
+  "descricao": "Fissura de ~2 mm na ala esquerda da boca de saída, com erosão do solo no pé do dissipador de energia.",
+  "gravidade": "Ruim",
+  "aberta_em": "2027-09-15",
+  "ordem_servico": "OS-2027-014",
+  "prazo": "2027-10-20",
+  "utm": [
+   698020.719,
+   7707550.964
+  ],
+  "xz": [
+   433.662,
+   -122.455
+  ],
+  "foto_ilustrativa": {
+   "arquivo": "dados/fotos/fissura_ilustrativa.jpg",
+   "legenda": "Foto ilustrativa: fissura vertical num muro de contenção de concreto. Não é o BUEIRO_001.",
+   "autor": "Sunolafjagtenben-hur",
+   "licenca": "CC0",
+   "fonte": "Wikimedia Commons",
+   "endereco": "https://commons.wikimedia.org/wiki/File:Detail_of_vertical_crack_in_concrete_retaining_wall_at_Medway_Park_Sports_Centre,_Gillingham,_Kent,_England.jpg"
+  }
+ },
+ "sensor": {
+  "id": "INC-01",
+  "id_ativo": "CORTE_001",
+  "tipo": "Inclinômetro com transmissão remota",
+  "mede": "deslocamento horizontal acumulado do talude, a 6 m de profundidade",
+  "limite_atencao_mm": 10,
+  "limite_alerta_mm": 25,
+  "bateria_pct": 78,
+  "ultima_transmissao": "2027-09-20T06:00",
+  "utm": [
+   697816.551,
+   7707455.745
+  ],
+  "xz": [
+   229.494,
+   -27.236
+  ],
+  "leituras": [
+   {
+    "data": "2027-01-04",
+    "deslocamento_mm": 1.03,
+    "chuva_mm": 82
+   },
+   {
+    "data": "2027-01-11",
+    "deslocamento_mm": 2.22,
+    "chuva_mm": 95
+   },
+   {
+    "data": "2027-01-18",
+    "deslocamento_mm": 3.11,
+    "chuva_mm": 70
+   },
+   {
+    "data": "2027-01-25",
+    "deslocamento_mm": 4.22,
+    "chuva_mm": 88
+   },
+   {
+    "data": "2027-02-01",
+    "deslocamento_mm": 5.04,
+    "chuva_mm": 64
+   },
+   {
+    "data": "2027-02-08",
+    "deslocamento_mm": 6.17,
+    "chuva_mm": 90
+   },
+   {
+    "data": "2027-02-15",
+    "deslocamento_mm": 7.13,
+    "chuva_mm": 76
+   },
+   {
+    "data": "2027-02-22",
+    "deslocamento_mm": 7.88,
+    "chuva_mm": 58
+   },
+   {
+    "data": "2027-03-01",
+    "deslocamento_mm": 8.79,
+    "chuva_mm": 72
+   },
+   {
+    "data": "2027-03-08",
+    "deslocamento_mm": 9.56,
+    "chuva_mm": 60
+   },
+   {
+    "data": "2027-03-15",
+    "deslocamento_mm": 10.19,
+    "chuva_mm": 48
+   },
+   {
+    "data": "2027-03-22",
+    "deslocamento_mm": 10.9,
+    "chuva_mm": 55
+   },
+   {
+    "data": "2027-03-29",
+    "deslocamento_mm": 11.43,
+    "chuva_mm": 40
+   },
+   {
+    "data": "2027-04-05",
+    "deslocamento_mm": 11.9,
+    "chuva_mm": 35
+   },
+   {
+    "data": "2027-04-12",
+    "deslocamento_mm": 12.21,
+    "chuva_mm": 22
+   },
+   {
+    "data": "2027-04-19",
+    "deslocamento_mm": 12.6,
+    "chuva_mm": 28
+   },
+   {
+    "data": "2027-04-26",
+    "deslocamento_mm": 12.86,
+    "chuva_mm": 18
+   },
+   {
+    "data": "2027-05-03",
+    "deslocamento_mm": 13.02,
+    "chuva_mm": 9
+   },
+   {
+    "data": "2027-05-10",
+    "deslocamento_mm": 13.14,
+    "chuva_mm": 6
+   },
+   {
+    "data": "2027-05-17",
+    "deslocamento_mm": 13.24,
+    "chuva_mm": 4
+   },
+   {
+    "data": "2027-05-24",
+    "deslocamento_mm": 13.31,
+    "chuva_mm": 2
+   },
+   {
+    "data": "2027-05-31",
+    "deslocamento_mm": 13.36,
+    "chuva_mm": 0
+   },
+   {
+    "data": "2027-06-07",
+    "deslocamento_mm": 13.45,
+    "chuva_mm": 3
+   },
+   {
+    "data": "2027-06-14",
+    "deslocamento_mm": 13.5,
+    "chuva_mm": 0
+   },
+   {
+    "data": "2027-06-21",
+    "deslocamento_mm": 13.56,
+    "chuva_mm": 1
+   },
+   {
+    "data": "2027-06-28",
+    "deslocamento_mm": 13.61,
+    "chuva_mm": 0
+   },
+   {
+    "data": "2027-07-05",
+    "deslocamento_mm": 13.66,
+    "chuva_mm": 0
+   },
+   {
+    "data": "2027-07-12",
+    "deslocamento_mm": 13.74,
+    "chuva_mm": 2
+   },
+   {
+    "data": "2027-07-19",
+    "deslocamento_mm": 13.79,
+    "chuva_mm": 0
+   },
+   {
+    "data": "2027-07-26",
+    "deslocamento_mm": 13.88,
+    "chuva_mm": 4
+   },
+   {
+    "data": "2027-08-02",
+    "deslocamento_mm": 13.93,
+    "chuva_mm": 0
+   },
+   {
+    "data": "2027-08-09",
+    "deslocamento_mm": 14.0,
+    "chuva_mm": 1
+   },
+   {
+    "data": "2027-08-16",
+    "deslocamento_mm": 14.05,
+    "chuva_mm": 0
+   },
+   {
+    "data": "2027-08-23",
+    "deslocamento_mm": 14.17,
+    "chuva_mm": 6
+   },
+   {
+    "data": "2027-08-30",
+    "deslocamento_mm": 14.36,
+    "chuva_mm": 12
+   },
+   {
+    "data": "2027-09-06",
+    "deslocamento_mm": 14.51,
+    "chuva_mm": 8
+   },
+   {
+    "data": "2027-09-13",
+    "deslocamento_mm": 14.77,
+    "chuva_mm": 18
+   },
+   {
+    "data": "2027-09-20",
+    "deslocamento_mm": 15.0,
+    "chuva_mm": 15
+   }
+  ]
+ },
+ "sensor_rio": {
+  "id": "HID-01",
+  "onde": "ponte",
+  "tipo": "Sensor de nível por radar, preso sob o tabuleiro no meio do vão central",
+  "mede": "a altura livre entre o fundo das vigas e a água, e a vazão pela curva-chave",
+  "cota_fundo_vigas_m": 579.11,
+  "cota_fundo_vale_m": 571.01,
+  "limite_atencao_m": 4.5,
+  "limite_alerta_m": 3.0,
+  "bateria_pct": 91,
+  "ultima_transmissao": "2027-09-20T06:00",
+  "utm": [
+   697543.29,
+   7707460.288
+  ],
+  "xz": [
+   -43.767,
+   -31.779
+  ],
+  "leituras": [
+   {
+    "data": "2027-01-04",
+    "chuva_mm": 82,
+    "nivel_m": 573.2,
+    "altura_livre_m": 5.91,
+    "vazao_m3s": 232.7
+   },
+   {
+    "data": "2027-01-11",
+    "chuva_mm": 95,
+    "nivel_m": 574.36,
+    "altura_livre_m": 4.75,
+    "vazao_m3s": 473.0
+   },
+   {
+    "data": "2027-01-18",
+    "chuva_mm": 70,
+    "nivel_m": 574.5,
+    "altura_livre_m": 4.61,
+    "vazao_m3s": 506.1
+   },
+   {
+    "data": "2027-01-25",
+    "chuva_mm": 88,
+    "nivel_m": 574.94,
+    "altura_livre_m": 4.17,
+    "vazao_m3s": 616.0
+   },
+   {
+    "data": "2027-02-01",
+    "chuva_mm": 64,
+    "nivel_m": 574.7,
+    "altura_livre_m": 4.41,
+    "vazao_m3s": 554.5
+   },
+   {
+    "data": "2027-02-08",
+    "chuva_mm": 90,
+    "nivel_m": 575.09,
+    "altura_livre_m": 4.02,
+    "vazao_m3s": 655.2
+   },
+   {
+    "data": "2027-02-15",
+    "chuva_mm": 76,
+    "nivel_m": 575.02,
+    "altura_livre_m": 4.09,
+    "vazao_m3s": 637.4
+   },
+   {
+    "data": "2027-02-22",
+    "chuva_mm": 58,
+    "nivel_m": 574.62,
+    "altura_livre_m": 4.49,
+    "vazao_m3s": 535.8
+   },
+   {
+    "data": "2027-03-01",
+    "chuva_mm": 72,
+    "nivel_m": 574.68,
+    "altura_livre_m": 4.43,
+    "vazao_m3s": 551.2
+   },
+   {
+    "data": "2027-03-08",
+    "chuva_mm": 60,
+    "nivel_m": 574.48,
+    "altura_livre_m": 4.63,
+    "vazao_m3s": 500.7
+   },
+   {
+    "data": "2027-03-15",
+    "chuva_mm": 48,
+    "nivel_m": 574.13,
+    "altura_livre_m": 4.98,
+    "vazao_m3s": 418.6
+   },
+   {
+    "data": "2027-03-22",
+    "chuva_mm": 55,
+    "nivel_m": 574.07,
+    "altura_livre_m": 5.04,
+    "vazao_m3s": 406.5
+   },
+   {
+    "data": "2027-03-29",
+    "chuva_mm": 40,
+    "nivel_m": 573.74,
+    "altura_livre_m": 5.37,
+    "vazao_m3s": 336.1
+   },
+   {
+    "data": "2027-04-05",
+    "chuva_mm": 35,
+    "nivel_m": 573.46,
+    "altura_livre_m": 5.65,
+    "vazao_m3s": 280.4
+   },
+   {
+    "data": "2027-04-12",
+    "chuva_mm": 22,
+    "nivel_m": 573.04,
+    "altura_livre_m": 6.07,
+    "vazao_m3s": 205.8
+   },
+   {
+    "data": "2027-04-19",
+    "chuva_mm": 28,
+    "nivel_m": 572.94,
+    "altura_livre_m": 6.17,
+    "vazao_m3s": 187.9
+   },
+   {
+    "data": "2027-04-26",
+    "chuva_mm": 18,
+    "nivel_m": 572.68,
+    "altura_livre_m": 6.43,
+    "vazao_m3s": 147.7
+   },
+   {
+    "data": "2027-05-03",
+    "chuva_mm": 9,
+    "nivel_m": 572.35,
+    "altura_livre_m": 6.76,
+    "vazao_m3s": 103.2
+   },
+   {
+    "data": "2027-05-10",
+    "chuva_mm": 6,
+    "nivel_m": 572.12,
+    "altura_livre_m": 6.99,
+    "vazao_m3s": 74.6
+   },
+   {
+    "data": "2027-05-17",
+    "chuva_mm": 4,
+    "nivel_m": 571.95,
+    "altura_livre_m": 7.16,
+    "vazao_m3s": 56.5
+   },
+   {
+    "data": "2027-05-24",
+    "chuva_mm": 2,
+    "nivel_m": 571.81,
+    "altura_livre_m": 7.3,
+    "vazao_m3s": 43.7
+   },
+   {
+    "data": "2027-05-31",
+    "chuva_mm": 0,
+    "nivel_m": 571.7,
+    "altura_livre_m": 7.41,
+    "vazao_m3s": 33.8
+   },
+   {
+    "data": "2027-06-07",
+    "chuva_mm": 3,
+    "nivel_m": 571.7,
+    "altura_livre_m": 7.41,
+    "vazao_m3s": 33.6
+   },
+   {
+    "data": "2027-06-14",
+    "chuva_mm": 0,
+    "nivel_m": 571.64,
+    "altura_livre_m": 7.47,
+    "vazao_m3s": 28.8
+   },
+   {
+    "data": "2027-06-21",
+    "chuva_mm": 1,
+    "nivel_m": 571.62,
+    "altura_livre_m": 7.49,
+    "vazao_m3s": 27.7
+   },
+   {
+    "data": "2027-06-28",
+    "chuva_mm": 0,
+    "nivel_m": 571.59,
+    "altura_livre_m": 7.52,
+    "vazao_m3s": 25.7
+   },
+   {
+    "data": "2027-07-05",
+    "chuva_mm": 0,
+    "nivel_m": 571.58,
+    "altura_livre_m": 7.53,
+    "vazao_m3s": 24.6
+   },
+   {
+    "data": "2027-07-12",
+    "chuva_mm": 2,
+    "nivel_m": 571.61,
+    "altura_livre_m": 7.5,
+    "vazao_m3s": 26.9
+   },
+   {
+    "data": "2027-07-19",
+    "chuva_mm": 0,
+    "nivel_m": 571.59,
+    "altura_livre_m": 7.52,
+    "vazao_m3s": 25.2
+   },
+   {
+    "data": "2027-07-26",
+    "chuva_mm": 4,
+    "nivel_m": 571.66,
+    "altura_livre_m": 7.45,
+    "vazao_m3s": 30.3
+   },
+   {
+    "data": "2027-08-02",
+    "chuva_mm": 0,
+    "nivel_m": 571.61,
+    "altura_livre_m": 7.5,
+    "vazao_m3s": 27.1
+   },
+   {
+    "data": "2027-08-09",
+    "chuva_mm": 1,
+    "nivel_m": 571.61,
+    "altura_livre_m": 7.5,
+    "vazao_m3s": 26.8
+   },
+   {
+    "data": "2027-08-16",
+    "chuva_mm": 0,
+    "nivel_m": 571.59,
+    "altura_livre_m": 7.52,
+    "vazao_m3s": 25.2
+   },
+   {
+    "data": "2027-08-23",
+    "chuva_mm": 6,
+    "nivel_m": 571.69,
+    "altura_livre_m": 7.42,
+    "vazao_m3s": 33.5
+   },
+   {
+    "data": "2027-08-30",
+    "chuva_mm": 12,
+    "nivel_m": 571.87,
+    "altura_livre_m": 7.24,
+    "vazao_m3s": 49.4
+   },
+   {
+    "data": "2027-09-06",
+    "chuva_mm": 8,
+    "nivel_m": 571.89,
+    "altura_livre_m": 7.22,
+    "vazao_m3s": 51.2
+   },
+   {
+    "data": "2027-09-13",
+    "chuva_mm": 18,
+    "nivel_m": 572.1,
+    "altura_livre_m": 7.01,
+    "vazao_m3s": 73.1
+   },
+   {
+    "data": "2027-09-20",
+    "chuva_mm": 15,
+    "nivel_m": 572.16,
+    "altura_livre_m": 6.95,
+    "vazao_m3s": 79.4
+   }
+  ]
+ },
+ "sensores_ponte": [
+  {
+   "id": "EROS-01",
+   "onde": "ponte",
+   "nome": "Erosão no pilar",
+   "tipo": "Sonar de erosão preso no pilar leste do vão central",
+   "mede": "a profundidade da erosão do leito junto ao pilar, em relação ao leito de projeto",
+   "unidade": "m",
+   "casas": 2,
+   "sentido": "acima",
+   "limite_atencao": 1.0,
+   "limite_alerta": 2.0,
+   "bateria_pct": 84,
+   "leituras": [
+    {
+     "data": "2027-01-04",
+     "valor": 0.25
+    },
+    {
+     "data": "2027-01-11",
+     "valor": 0.66
+    },
+    {
+     "data": "2027-01-18",
+     "valor": 0.71
+    },
+    {
+     "data": "2027-01-25",
+     "valor": 0.86
+    },
+    {
+     "data": "2027-02-01",
+     "valor": 0.82
+    },
+    {
+     "data": "2027-02-08",
+     "valor": 0.91
+    },
+    {
+     "data": "2027-02-15",
+     "valor": 0.89
+    },
+    {
+     "data": "2027-02-22",
+     "valor": 0.85
+    },
+    {
+     "data": "2027-03-01",
+     "valor": 0.82
+    },
+    {
+     "data": "2027-03-08",
+     "valor": 0.78
+    },
+    {
+     "data": "2027-03-15",
+     "valor": 0.75
+    },
+    {
+     "data": "2027-03-22",
+     "valor": 0.72
+    },
+    {
+     "data": "2027-03-29",
+     "valor": 0.69
+    },
+    {
+     "data": "2027-04-05",
+     "valor": 0.67
+    },
+    {
+     "data": "2027-04-12",
+     "valor": 0.64
+    },
+    {
+     "data": "2027-04-19",
+     "valor": 0.62
+    },
+    {
+     "data": "2027-04-26",
+     "valor": 0.59
+    },
+    {
+     "data": "2027-05-03",
+     "valor": 0.57
+    },
+    {
+     "data": "2027-05-10",
+     "valor": 0.55
+    },
+    {
+     "data": "2027-05-17",
+     "valor": 0.53
+    },
+    {
+     "data": "2027-05-24",
+     "valor": 0.51
+    },
+    {
+     "data": "2027-05-31",
+     "valor": 0.49
+    },
+    {
+     "data": "2027-06-07",
+     "valor": 0.48
+    },
+    {
+     "data": "2027-06-14",
+     "valor": 0.46
+    },
+    {
+     "data": "2027-06-21",
+     "valor": 0.44
+    },
+    {
+     "data": "2027-06-28",
+     "valor": 0.43
+    },
+    {
+     "data": "2027-07-05",
+     "valor": 0.41
+    },
+    {
+     "data": "2027-07-12",
+     "valor": 0.4
+    },
+    {
+     "data": "2027-07-19",
+     "valor": 0.39
+    },
+    {
+     "data": "2027-07-26",
+     "valor": 0.38
+    },
+    {
+     "data": "2027-08-02",
+     "valor": 0.37
+    },
+    {
+     "data": "2027-08-09",
+     "valor": 0.35
+    },
+    {
+     "data": "2027-08-16",
+     "valor": 0.34
+    },
+    {
+     "data": "2027-08-23",
+     "valor": 0.33
+    },
+    {
+     "data": "2027-08-30",
+     "valor": 0.33
+    },
+    {
+     "data": "2027-09-06",
+     "valor": 0.32
+    },
+    {
+     "data": "2027-09-13",
+     "valor": 0.31
+    },
+    {
+     "data": "2027-09-20",
+     "valor": 0.3
+    }
+   ],
+   "ultima_transmissao": "2027-09-20T06:00",
+   "utm": [
+    697558.404,
+    7707451.667
+   ],
+   "xz": [
+    -28.653,
+    -23.158
+   ],
+   "cota_m": 575.59
+  },
+  {
+   "id": "JUN-01",
+   "onde": "ponte",
+   "nome": "Junta do encontro leste",
+   "tipo": "Medidor de abertura na junta de dilatação do encontro leste, com termômetro no tabuleiro",
+   "mede": "a abertura da junta, que fecha quando o tabuleiro esquenta",
+   "unidade": "mm",
+   "casas": 1,
+   "sentido": "abaixo",
+   "limite_atencao": 10.0,
+   "limite_alerta": 5.0,
+   "secundaria": {
+    "chave": "temperatura_c",
+    "rotulo": "Temperatura do tabuleiro",
+    "unidade": "°C"
+   },
+   "bateria_pct": 93,
+   "leituras": [
+    {
+     "data": "2027-01-04",
+     "valor": 17.0,
+     "temperatura_c": 25.7
+    },
+    {
+     "data": "2027-01-11",
+     "valor": 16.7,
+     "temperatura_c": 26.4
+    },
+    {
+     "data": "2027-01-18",
+     "valor": 16.6,
+     "temperatura_c": 26.3
+    },
+    {
+     "data": "2027-01-25",
+     "valor": 17.1,
+     "temperatura_c": 25.6
+    },
+    {
+     "data": "2027-02-01",
+     "valor": 17.0,
+     "temperatura_c": 25.4
+    },
+    {
+     "data": "2027-02-08",
+     "valor": 16.9,
+     "temperatura_c": 26.0
+    },
+    {
+     "data": "2027-02-15",
+     "valor": 16.6,
+     "temperatura_c": 26.3
+    },
+    {
+     "data": "2027-02-22",
+     "valor": 17.0,
+     "temperatura_c": 25.7
+    },
+    {
+     "data": "2027-03-01",
+     "valor": 17.5,
+     "temperatura_c": 24.7
+    },
+    {
+     "data": "2027-03-08",
+     "valor": 17.6,
+     "temperatura_c": 24.4
+    },
+    {
+     "data": "2027-03-15",
+     "valor": 17.6,
+     "temperatura_c": 24.7
+    },
+    {
+     "data": "2027-03-22",
+     "valor": 17.5,
+     "temperatura_c": 24.6
+    },
+    {
+     "data": "2027-03-29",
+     "valor": 18.1,
+     "temperatura_c": 23.7
+    },
+    {
+     "data": "2027-04-05",
+     "valor": 18.6,
+     "temperatura_c": 22.5
+    },
+    {
+     "data": "2027-04-12",
+     "valor": 18.8,
+     "temperatura_c": 22.2
+    },
+    {
+     "data": "2027-04-19",
+     "valor": 18.8,
+     "temperatura_c": 22.4
+    },
+    {
+     "data": "2027-04-26",
+     "valor": 18.8,
+     "temperatura_c": 22.1
+    },
+    {
+     "data": "2027-05-03",
+     "valor": 19.6,
+     "temperatura_c": 20.9
+    },
+    {
+     "data": "2027-05-10",
+     "valor": 20.0,
+     "temperatura_c": 19.8
+    },
+    {
+     "data": "2027-05-17",
+     "valor": 20.2,
+     "temperatura_c": 19.7
+    },
+    {
+     "data": "2027-05-24",
+     "valor": 20.0,
+     "temperatura_c": 19.9
+    },
+    {
+     "data": "2027-05-31",
+     "valor": 20.3,
+     "temperatura_c": 19.4
+    },
+    {
+     "data": "2027-06-07",
+     "valor": 20.9,
+     "temperatura_c": 18.3
+    },
+    {
+     "data": "2027-06-14",
+     "valor": 21.3,
+     "temperatura_c": 17.5
+    },
+    {
+     "data": "2027-06-21",
+     "valor": 21.3,
+     "temperatura_c": 17.7
+    },
+    {
+     "data": "2027-06-28",
+     "valor": 21.0,
+     "temperatura_c": 18.0
+    },
+    {
+     "data": "2027-07-05",
+     "valor": 21.3,
+     "temperatura_c": 17.7
+    },
+    {
+     "data": "2027-07-12",
+     "valor": 21.6,
+     "temperatura_c": 16.8
+    },
+    {
+     "data": "2027-07-19",
+     "valor": 21.9,
+     "temperatura_c": 16.5
+    },
+    {
+     "data": "2027-07-26",
+     "valor": 21.6,
+     "temperatura_c": 17.0
+    },
+    {
+     "data": "2027-08-02",
+     "valor": 21.2,
+     "temperatura_c": 17.6
+    },
+    {
+     "data": "2027-08-09",
+     "valor": 21.5,
+     "temperatura_c": 17.4
+    },
+    {
+     "data": "2027-08-16",
+     "valor": 21.5,
+     "temperatura_c": 16.9
+    },
+    {
+     "data": "2027-08-23",
+     "valor": 21.7,
+     "temperatura_c": 17.0
+    },
+    {
+     "data": "2027-08-30",
+     "valor": 21.0,
+     "temperatura_c": 17.9
+    },
+    {
+     "data": "2027-09-06",
+     "valor": 20.7,
+     "temperatura_c": 18.7
+    },
+    {
+     "data": "2027-09-13",
+     "valor": 20.7,
+     "temperatura_c": 18.7
+    },
+    {
+     "data": "2027-09-20",
+     "valor": 20.8,
+     "temperatura_c": 18.4
+    }
+   ],
+   "ultima_transmissao": "2027-09-20T06:00",
+   "utm": [
+    697588.893,
+    7707434.276
+   ],
+   "xz": [
+    1.836,
+    -5.767
+   ],
+   "cota_m": 581.3
+  },
+  {
+   "id": "ACL-01",
+   "onde": "ponte",
+   "nome": "Vibração do vão central",
+   "tipo": "Acelerômetro sob a viga, a um quarto do vão central",
+   "mede": "a frequência própria do vão central; a de referência, 3.12 Hz, é a da entrada em operação",
+   "unidade": "Hz",
+   "casas": 2,
+   "sentido": "abaixo",
+   "limite_atencao": 2.96,
+   "limite_alerta": 2.81,
+   "secundaria": {
+    "chave": "temperatura_c",
+    "rotulo": "Temperatura do tabuleiro",
+    "unidade": "°C"
+   },
+   "bateria_pct": 77,
+   "leituras": [
+    {
+     "data": "2027-01-04",
+     "valor": 3.099,
+     "temperatura_c": 25.7
+    },
+    {
+     "data": "2027-01-11",
+     "valor": 3.099,
+     "temperatura_c": 26.4
+    },
+    {
+     "data": "2027-01-18",
+     "valor": 3.093,
+     "temperatura_c": 26.3
+    },
+    {
+     "data": "2027-01-25",
+     "valor": 3.099,
+     "temperatura_c": 25.6
+    },
+    {
+     "data": "2027-02-01",
+     "valor": 3.103,
+     "temperatura_c": 25.4
+    },
+    {
+     "data": "2027-02-08",
+     "valor": 3.094,
+     "temperatura_c": 26.0
+    },
+    {
+     "data": "2027-02-15",
+     "valor": 3.097,
+     "temperatura_c": 26.3
+    },
+    {
+     "data": "2027-02-22",
+     "valor": 3.102,
+     "temperatura_c": 25.7
+    },
+    {
+     "data": "2027-03-01",
+     "valor": 3.099,
+     "temperatura_c": 24.7
+    },
+    {
+     "data": "2027-03-08",
+     "valor": 3.104,
+     "temperatura_c": 24.4
+    },
+    {
+     "data": "2027-03-15",
+     "valor": 3.106,
+     "temperatura_c": 24.7
+    },
+    {
+     "data": "2027-03-22",
+     "valor": 3.099,
+     "temperatura_c": 24.6
+    },
+    {
+     "data": "2027-03-29",
+     "valor": 3.106,
+     "temperatura_c": 23.7
+    },
+    {
+     "data": "2027-04-05",
+     "valor": 3.114,
+     "temperatura_c": 22.5
+    },
+    {
+     "data": "2027-04-12",
+     "valor": 3.108,
+     "temperatura_c": 22.2
+    },
+    {
+     "data": "2027-04-19",
+     "valor": 3.111,
+     "temperatura_c": 22.4
+    },
+    {
+     "data": "2027-04-26",
+     "valor": 3.115,
+     "temperatura_c": 22.1
+    },
+    {
+     "data": "2027-05-03",
+     "valor": 3.113,
+     "temperatura_c": 20.9
+    },
+    {
+     "data": "2027-05-10",
+     "valor": 3.121,
+     "temperatura_c": 19.8
+    },
+    {
+     "data": "2027-05-17",
+     "valor": 3.124,
+     "temperatura_c": 19.7
+    },
+    {
+     "data": "2027-05-24",
+     "valor": 3.117,
+     "temperatura_c": 19.9
+    },
+    {
+     "data": "2027-05-31",
+     "valor": 3.123,
+     "temperatura_c": 19.4
+    },
+    {
+     "data": "2027-06-07",
+     "valor": 3.13,
+     "temperatura_c": 18.3
+    },
+    {
+     "data": "2027-06-14",
+     "valor": 3.126,
+     "temperatura_c": 17.5
+    },
+    {
+     "data": "2027-06-21",
+     "valor": 3.129,
+     "temperatura_c": 17.7
+    },
+    {
+     "data": "2027-06-28",
+     "valor": 3.131,
+     "temperatura_c": 18.0
+    },
+    {
+     "data": "2027-07-05",
+     "valor": 3.125,
+     "temperatura_c": 17.7
+    },
+    {
+     "data": "2027-07-12",
+     "valor": 3.133,
+     "temperatura_c": 16.8
+    },
+    {
+     "data": "2027-07-19",
+     "valor": 3.136,
+     "temperatura_c": 16.5
+    },
+    {
+     "data": "2027-07-26",
+     "valor": 3.127,
+     "temperatura_c": 17.0
+    },
+    {
+     "data": "2027-08-02",
+     "valor": 3.13,
+     "temperatura_c": 17.6
+    },
+    {
+     "data": "2027-08-09",
+     "valor": 3.133,
+     "temperatura_c": 17.4
+    },
+    {
+     "data": "2027-08-16",
+     "valor": 3.128,
+     "temperatura_c": 16.9
+    },
+    {
+     "data": "2027-08-23",
+     "valor": 3.132,
+     "temperatura_c": 17.0
+    },
+    {
+     "data": "2027-08-30",
+     "valor": 3.131,
+     "temperatura_c": 17.9
+    },
+    {
+     "data": "2027-09-06",
+     "valor": 3.121,
+     "temperatura_c": 18.7
+    },
+    {
+     "data": "2027-09-13",
+     "valor": 3.126,
+     "temperatura_c": 18.7
+    },
+    {
+     "data": "2027-09-20",
+     "valor": 3.129,
+     "temperatura_c": 18.4
+    }
+   ],
+   "ultima_transmissao": "2027-09-20T06:00",
+   "utm": [
+    697535.733,
+    7707464.598
+   ],
+   "xz": [
+    -51.324,
+    -36.09
+   ],
+   "cota_m": 579.11
+  }
+ ],
+ "ponte": {
+  "id": "OAE-01",
+  "condicao": "Boa",
+  "manutencao_prevista": [
+   "Limpeza dos drenos e das juntas do tabuleiro a cada 6 meses",
+   "Verificação dos aparelhos de apoio de neoprene a cada 12 meses",
+   "Vistoria dos pilares e blocos sempre que o HID-01 passar do limite de atenção"
+  ],
+  "inspecoes": [
+   {
+    "atividade": "Inspeção cadastral (entrada em operação)",
+    "data_executada": "2027-01-12",
+    "condicao": "Boa",
+    "nao_conformidade": null,
+    "servico_realizado": "nenhum (registro do estado inicial)",
+    "decisao": "conservar",
+    "status": "executada",
+    "custo_rs": null,
+    "observacao": null
+   },
+   {
+    "atividade": "Inspeção extraordinária, depois da cheia",
+    "data_executada": "2027-03-04",
+    "condicao": "Regular",
+    "nao_conformidade": "galhada presa nos pilares do vão central; sem erosão nos blocos",
+    "servico_realizado": "remoção da galhada com caminhão munck",
+    "decisao": "conservar",
+    "status": "executada",
+    "custo_rs": 2400.0,
+    "observacao": "o HID-01 ficou em atenção de 25/01 a 01/03"
+   },
+   {
+    "atividade": "Inspeção rotineira",
+    "data_executada": "2027-07-14",
+    "condicao": "Boa",
+    "nao_conformidade": "terra acumulada na junta de dilatação do encontro leste",
+    "servico_realizado": "limpeza das juntas e dos drenos do tabuleiro",
+    "decisao": "conservar",
+    "status": "executada",
+    "custo_rs": 950.0,
+    "observacao": null
+   }
+  ],
+  "proxima": {
+   "atividade": "Inspeção rotineira, antes das chuvas",
+   "data_planejada": "2027-11-16",
+   "responsavel": "Equipe de conservação 01",
+   "status": "planejada"
+  }
+ },
+ "pontos_extras": {
+  "boca_entrada": {
+   "utm": [
+    698036.319,
+    7707521.509
+   ],
+   "xz": [
+    449.262,
+    -93.0
+   ]
+  }
+ }
+}
