@@ -768,15 +768,35 @@ a { color: var(--link); }
 /* ---------- crédito da foto no 3D ---------- */
 .credito-foto-3d { position: absolute; right: 10px; bottom: 10px; z-index: 5; margin: 0; padding: 2px 8px; background: rgba(11, 19, 27, .8); border-radius: 6px; color: var(--mudo); font-size: 11px; line-height: 1.4; pointer-events: none; }
 .credito-foto-3d[hidden] { display: none; }
-.credito-foto-3d span + span::before { content: ' · '; }
+.credito-item + .credito-item::before { content: ' · '; }
+.credito-curto { display: none; }
 /* No celular a linha de ajuda ocupa a largura toda embaixo; o crédito sobe para não ficar por cima dela.
    Com o crédito do rio junto (OpenStreetMap), em 375 px ele quebrava em duas linhas e passava por cima da
    dica "um dedo gira" da janela do Painel: cada crédito vai numa linha, e a caixa para antes da dica. */
 @media (max-width: 700px) {
   .credito-foto-3d { bottom: 54px; }
-  .credito-foto-3d span { display: block; }
-  .credito-foto-3d span + span::before { content: none; }
-  .janela3d .credito-foto-3d { max-width: calc(100% - 110px); }
+  .credito-item { display: block; }
+  .credito-item + .credito-item::before { content: none; }
+
+  /* A janela do 3D no Painel do celular: 240 px de altura onde cabiam o cartão da ponte, seis etiquetas,
+     a legenda, dois créditos e a dica, com a Fissura atrás do cartão e o INC-01 cortado ("muito
+     poluído", print do dono em 03/11/2026). Ficam só as etiquetas de atenção, escolha dele: as da ponte
+     voltam quando o sensor é escolhido (aria-pressed). A legenda e a dica estão na aba 3D, de tela
+     inteira; o cartão da ponte desce para o pé, longe da Fissura e do INC-01, e os créditos viram uma
+     linha curta embaixo dele. */
+  .janela3d .rotulo-3d[data-grupo="ponte"]:not([aria-pressed="true"]) { display: none; }
+  .janela3d .legenda-3d, .janela3d .dica-3d { display: none; }
+  /* O INC-01 (lado-dir) ia de 285 a 405 px numa janela de 375, e para a esquerda ele cairia em cima da
+     Fissura (103 a 243 px, na mesma altura): na janela pequena o rótulo da direita desce e vai para a
+     esquerda do pino. Medido em 375 px em 03/11/2026. */
+  .janela3d .rotulo-3d.lado-dir { bottom: auto; top: 12px; left: auto; right: -4px; }
+  .janela3d .rotulo-3d.lado-dir::after { left: auto; right: 4px; top: auto; bottom: 100%; }
+  .janela3d .ponte-info { top: auto; bottom: 26px; padding: 3px 8px 4px; }
+  .janela3d .credito-foto-3d { left: 12px; right: auto; bottom: 6px; max-width: calc(100% - 24px); padding: 0 6px; font-size: 10px; background: rgba(11, 19, 27, .6); }
+  .janela3d .credito-item { display: inline; }
+  .janela3d .credito-item + .credito-item::before { content: ' · '; }
+  .janela3d .credito-longo { display: none; }
+  .janela3d .credito-curto { display: inline; }
 }
 
 /* ---------- cadastro de inspeção pelo link ---------- */

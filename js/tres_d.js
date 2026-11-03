@@ -31,8 +31,11 @@ const ESPERA_LADRILHO_MS = 20000;
 // Folga de 2 px em volta da caixa: o retângulo UTM, visto em Mercator, fica levemente girado (convergência
 // de meridianos), e os cantos do terreno não podem cair fora da imagem.
 const MARGEM_FOTO_PX = 2;
-const CREDITO_FOTO = 'Foto: Esri, Maxar, Earthstar Geographics';
-const CREDITO_RIO = 'Rio: © colaboradores do OpenStreetMap';
+// O curto é o que vai na janela do Painel no celular: lá os dois créditos por extenso ocupavam duas
+// linhas de 240 px de altura (print do dono, 03/11/2026). Ele guarda o que a Esri e o OpenStreetMap
+// pedem que apareça: os nomes dos fornecedores e o "© OpenStreetMap".
+const CREDITO_FOTO = { longo: 'Foto: Esri, Maxar, Earthstar Geographics', curto: 'Esri, Maxar, Earthstar Geographics' };
+const CREDITO_RIO = { longo: 'Rio: © colaboradores do OpenStreetMap', curto: '© OpenStreetMap' };
 
 const aguardarUmTique = () => new Promise((ok) => setTimeout(ok, 0));
 
@@ -105,7 +108,6 @@ export function criarCena(container, dados, ctx) {
 
   const credito = document.createElement('p');
   credito.className = 'credito-foto-3d';
-  credito.textContent = CREDITO_FOTO;
   credito.hidden = true;
   container.append(credito);
 
@@ -240,9 +242,16 @@ export function criarCena(container, dados, ctx) {
   function atualizarCredito() {
     const comFoto = fotoNoTerreno && terreno && terreno.visible;
     // Um span por crédito: no celular cada um vai para uma linha (estilo.css), à esquerda da dica de toque.
-    const partes = [comFoto && CREDITO_FOTO, temRio && CREDITO_RIO].filter(Boolean).map((texto) => {
+    const partes = [comFoto && CREDITO_FOTO, temRio && CREDITO_RIO].filter(Boolean).map(({ longo, curto }) => {
       const s = document.createElement('span');
-      s.textContent = texto;
+      s.className = 'credito-item';
+      const l = document.createElement('span');
+      l.className = 'credito-longo';
+      l.textContent = longo;
+      const c = document.createElement('span');
+      c.className = 'credito-curto';
+      c.textContent = curto;
+      s.append(l, c);
       return s;
     });
     credito.replaceChildren(...partes);
