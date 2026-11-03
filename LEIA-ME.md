@@ -6,6 +6,10 @@ Uma página que a banca do TFM abre pelo celular (link ou QR code) para ver como
 funcionaria o gêmeo digital da rodovia BRG4: mapa com foto aérea, o modelo 3D do
 IFC, a ficha de cada ativo, o histórico de inspeção e um sensor.
 
+**Endereço público:** <https://lfmoura72-ux.github.io/gemeo-digital-brg4/> (GitHub Pages do
+repositório público `lfmoura72-ux/gemeo-digital-brg4`, no ar desde 02/11/2026, com a aprovação do
+grupo e da Zigurat para os dados do BRG4 ficarem públicos). O botão "Compartilhar" mostra o QR code.
+
 **O que é real e o que é fictício.** Real: a geometria (os IFC do grupo), os 55
 ativos, os IDs, a classificação Uniclass e as tarefas de manutenção (COBie e
 `BRG4_AIM.gpkg`). Fictício: as três inspeções do `BUEIRO_001`, a patologia
@@ -60,7 +64,8 @@ ordem no SQL Editor: primeiro o `2_apagar_e_editar.sql` (cola inteiro e Run; tam
 novo sem apagar nada), depois, uma vez só, o `3_palavra_do_dono.sql`. Quem pode mexer numa
 inspeção: (a) **quem gravou, do mesmo celular**: a página sorteia um segredo na gravação, guarda no
 aparelho e manda ao banco só o hash dele, numa coluna que o link não consegue ler; (b) **o dono**,
-com a palavra-código ("Sou o dono", um botão discreto no fim da ficha). A palavra-código **nunca
+com a palavra-código ("Sou o dono", um botão discreto no fim do bloco "Cadastradas pelo link",
+que é o primeiro da ficha). A palavra-código **nunca
 vai para arquivo nenhum**: o `3_palavra_do_dono.sql` traz um marcador, a palavra é digitada só no
 SQL Editor na hora de rodar (o banco guarda apenas o hash) e, no aparelho do dono, fica no
 `localStorage` depois que o banco a confirma. A foto é apagada pela página, pela API do Storage,
@@ -152,6 +157,18 @@ py -3 -m http.server 8765
 ```
 
 e abrir `http://localhost:8765`.
+
+## Como publicar uma mudança
+
+Salvar a versão (`git commit`) e enviar (`git push`): o GitHub refaz o site sozinho em cerca de
+um minuto. O ramo `main` é o público e começa numa versão única de 02/11/2026, assinada com o
+endereço mascarado do GitHub (`…@users.noreply.github.com`, já configurado só nesta pasta), para o
+e-mail pessoal do dono não aparecer. As 20 versões do desenvolvimento ficam no ramo
+`historico-privado`, **só neste computador: nunca enviar esse ramo**, porque ele traz o e-mail.
+
+O site entrega os arquivos de texto com o fim de linha do Git (LF), e esta pasta, no Windows, tem o
+fim de linha do Windows (CRLF). Por isso o `dados/ativos.json` publicado tem outro MD5 (`b2abcd57…`)
+que o do disco (`18934399…`): tirando o fim de linha, são o mesmo arquivo (conferido em 02/11/2026).
 
 ## Créditos
 
